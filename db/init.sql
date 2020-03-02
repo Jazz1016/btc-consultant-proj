@@ -1,0 +1,22 @@
+-- CREATE TABLE consult_user(
+-- user_id SERIAL PRIMARY KEY,
+-- email VARCHAR(70),
+-- password TEXT,
+-- first_name VARCHAR(25),
+-- last_name VARCHAR(25)
+-- )
+
+-- CREATE TABLE products(
+-- product_id SERIAL PRIMARY KEY,
+-- product_name VARCHAR(50) NOT NULL,
+-- product_img TEXT,
+-- price integer NOT NULL,
+-- description VARCHAR(200),
+-- available BOOLEAN NOT NULL
+-- )
+
+-- CREATE TABLE user_products(
+-- cart_id SERIAL PRIMARY KEY,
+-- user_id INTEGER REFERENCES consult_user(user_id),
+-- product_id INTEGER REFERENCES products(product_id)
+-- )
