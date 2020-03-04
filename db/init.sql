@@ -39,5 +39,5 @@ body VARCHAR(1000)
 
 CREATE TABLE subscribers(
 sub_id SERIAL PRIMARY KEY,
-sub_email VARCHAR(50)
+sub_email VARCHAR(50) NOT NULL
 )

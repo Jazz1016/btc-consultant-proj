@@ -78,4 +78,5 @@ app.post(`/api/contact`, contactCtrl.newMessage);
 app.delete(`/api/contact/:id`, contactCtrl.deleteMessage);
 
 //Email Subscription Endpoints
+app.get(`/api/subscription`, subCtrl.getSubs);
 app.post(`/api/subscription`, subCtrl.addSub);
