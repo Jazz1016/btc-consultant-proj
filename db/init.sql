@@ -27,7 +27,7 @@ contact_msg_id SERIAL PRIMARY KEY,
 name VARCHAR(40),
 subject VARCHAR(45),
 email VARCHAR(100),
-message VARCHAR(250)
+message VARCHAR(400)
 )
 
 CREATE TABLE blog_posts(

@@ -1,5 +1,6 @@
 module.exports = {
-  getAllMessages: (req, res) => {},
-  newMessage: (req, res) => {},
-  deleteMessage: (req, res) => {}
+  getAllMessages: async (req, res) => {},
+  getOneMessage: async (req, res) => {},
+  newMessage: async (req, res) => {},
+  deleteMessage: async (req, res) => {}
 };

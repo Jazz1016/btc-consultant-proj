@@ -4,13 +4,14 @@ const massive = require("massive");
 const session = require("express-session");
 
 const authCTRL = require("./controllers/authController");
-const aboutCtrl = require("./controllers/authController");
 const blogCtrl = require("./controllers/blogController");
 const cartCtrl = require("./controllers/cartController");
 const productCtrl = require("./controllers/productsController");
+const aboutCtrl = require("./controllers/aboutController");
 const contactCtrl = require(`./controllers/contactCtrl`),
-  checkUser = require("./middlewares/checkUser"),
-  checkAdmin = require("./middlewares/checkAdmin");
+  subCtrl = require("./controllers/subscriptionController");
+(checkUser = require("./middlewares/checkUser")),
+  (checkAdmin = require("./middlewares/checkAdmin"));
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
 const app = express();
@@ -59,18 +60,22 @@ app.get(`/api/carts/:id`, cartCtrl.getUsersProducts);
 app.post(`/api/carts/:id`, cartCtrl.addToCart);
 app.delete(`/api/carts/:id`, cartCtrl.deleteFromCart);
 
-// //Blog Endpoints
-// app.get(`/api/blog`, blogCtrl.allBlogPosts);
-// app.post(`/api/blog`, blogCtrl.newBlogPost);
-// app.put(`/api/blog/:id`, blogCtrl.editBlogPost);
-// app.delete(`/api/blog/:id`, blogCtrl.deleteBlogPost);
-// app.get(`/api/blog/:id`, blogCtrl.oneBlogPost);
+//Blog Endpoints
+app.get(`/api/blog`, blogCtrl.allBlogPosts);
+app.post(`/api/blog`, blogCtrl.newBlogPost);
+app.put(`/api/blog/:id`, blogCtrl.editBlogPost);
+app.delete(`/api/blog/:id`, blogCtrl.deleteBlogPost);
+app.get(`/api/blog/:id`, blogCtrl.oneBlogPost);
 
 // //About Endpoints
 // app.get(`/api/about`, aboutCtrl.getAboutData);
 // app.put(`/api/about/:id`, aboutCtrl.editAboutData);
 
-// //Contact Endpoints
-// app.get(`/api/contact`, contactCtrl.getAllMessages);
-// app.post(`/api/contact`, contactCtrl.newMessage);
-// app.delete(`/api/contact/:id`, contactCtrl.deleteMessage);
+//Contact Endpoints
+app.get(`/api/contact`, contactCtrl.getAllMessages);
+app.get(`/api/contact/:id`, contactCtrl.getOneMessage);
+app.post(`/api/contact`, contactCtrl.newMessage);
+app.delete(`/api/contact/:id`, contactCtrl.deleteMessage);
+
+//Email Subscription Endpoints
+app.post(`/api/subscription`, subCtrl.addSub);
