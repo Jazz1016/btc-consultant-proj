@@ -57,7 +57,7 @@ app.get(`/api/product/:id`, productCtrl.oneProduct);
 //Cart Endpoints
 
 app.get(`/api/carts/:id`, cartCtrl.getUsersProducts);
-app.post(`/api/carts/:id`, cartCtrl.addToCart);
+app.post(`/api/carts`, cartCtrl.addToCart);
 app.delete(`/api/carts/:id`, cartCtrl.deleteFromCart);
 
 //Blog Endpoints

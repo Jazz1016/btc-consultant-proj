@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { login, register } from "../../redux/reducers/userReducer";
+// import { Link } from "react-router-dom";
 
 const Auth = props => {
   const [email, setEmail] = useState("");
@@ -53,6 +54,10 @@ const Auth = props => {
           <span
             onClick={() => {
               setLogReg(!logReg);
+              setEmail("");
+              setPass("");
+              setFirst("");
+              setLast("");
             }}
           >
             Already have an account? click here
@@ -84,10 +89,13 @@ const Auth = props => {
           >
             Login
           </button>
-
           <span
             onClick={() => {
               setLogReg(!logReg);
+              setEmail("");
+              setPass("");
+              setFirst("");
+              setLast("");
             }}
           >
             Not Signed up? click here

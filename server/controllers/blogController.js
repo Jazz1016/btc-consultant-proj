@@ -5,6 +5,7 @@ module.exports = {
     let posts = await db.get_all_blogs();
     posts;
     if (posts) {
+      // console.log(posts);
       res.status(200).send(posts);
     } else {
       res.sendStatus(500);
@@ -51,6 +52,7 @@ module.exports = {
     }
   },
   oneBlogPost: async (req, res) => {
+    console.log("hit");
     //used to get one Blog post and send it to the front end, may go in tandem with edit
     const db = req.app.get("db").blog;
     const { id } = req.params;

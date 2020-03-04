@@ -17,7 +17,7 @@ module.exports = {
     const db = req.app.get("db").cart;
     const { user_id, product_id } = req.body;
     try {
-      // console.log(user_id, product_id);
+      console.log(user_id, product_id);
       await db.add_to_cart([user_id, product_id]);
       let newCart = await db.get_users_products(user_id);
       // console.log(newCart);

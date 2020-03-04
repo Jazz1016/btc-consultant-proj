@@ -41,7 +41,9 @@ const Header = props => {
           <Link to="/shop">
             <p>shop</p>
           </Link>
-          {/* <Link to="/"></Link> */}
+          <Link to="/admin">
+            <p>admin</p>
+          </Link>
         </div>
       ) : (
         <div className="nav-bar">

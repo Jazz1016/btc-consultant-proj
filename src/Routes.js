@@ -11,6 +11,7 @@ import ContactMsg from "./components/Contact/ContactMsg";
 import Landing from "./components/Landing/Landing";
 import Newsletter from "./components/Newsletter/Newsletter";
 import Shop from "./components/Shop/Shop";
+import Product from "./components/Products/Product";
 
 export default (
   <Switch>
@@ -23,6 +24,7 @@ export default (
     <Route exact path="/contact" component={Contact} />
     <Route path="/contact/:id" component={ContactMsg} />
     <Route path="/cart" component={Cart} />
+    <Route path="/product/:id" component={Product} />
     <Route path="/newsletter" component={Newsletter} />
     <Route path="/shop" component={Shop} />
   </Switch>
