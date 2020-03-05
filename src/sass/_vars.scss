@@ -1,0 +1,29 @@
+$primary: #628395;
+$secondary: #96897b;
+$color1: #dbad6a;
+$color2: #dfd5a5;
+$color3: #cf995f;
+$info: #02571b;
+$danger: rgba(221, 32, 32, 0.966);
+$textcolor1: black;
+$textcolor2: white;
+
+$font1: "Candara", sans-serif;
+$font2: "Lora", serif;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1025px;
+
+@mixin flex-row($j: space-around, $a: center) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin flex-column($j: space-around, $a: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $j;
+  align-items: $a;
+}

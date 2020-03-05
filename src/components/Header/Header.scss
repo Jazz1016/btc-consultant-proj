@@ -1,8 +1,178 @@
+@import "../../sass/vars";
+
+.header {
+  @include flex-row(space-between, center);
+  flex-direction: row-reverse;
+  background-color: $secondary;
+  height: 10vh;
+  font-family: $font1;
+  span {
+    color: $textcolor1;
+    margin-left: 3vh;
+  }
+  img {
+    height: 20px;
+    width: 20px;
+    margin-right: 3vh;
+  }
+}
+
+.meteor-header {
+  text-decoration: none;
+  color: $textcolor2;
+}
+
 .nav-bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: stretch;
-  align-content: stretch;
+  @include flex-column(flex-start, center);
+  background-color: $color1;
+  position: fixed;
+  top: 9.8vh;
+  width: 100vw;
+  min-height: 20vh;
+  max-height: 30vh;
+  overflow: hidden;
+  z-index: 1;
+  a {
+    @include flex-row(center, center);
+    text-decoration: none;
+    color: $textcolor2;
+    height: 2vh;
+    width: 100vw;
+    height: 4vh;
+    border: solid;
+    border-bottom: none;
+    border-color: $color1;
+    border-width: thin;
+  }
+}
+
+.hide-nav {
+  min-height: 0vh;
+  max-height: 0vh;
+}
+
+//TABLET MEDIA QUERY
+@media (min-width: 680px) {
+  .header {
+    @include flex-row(space-between, center);
+    flex-direction: row-reverse;
+    background-color: $secondary;
+    height: 10vh;
+    font-family: $font1;
+    span {
+      color: $textcolor1;
+      margin-left: 5vh;
+    }
+    img {
+      height: 20px;
+      width: 20px;
+      margin-right: 5vh;
+    }
+  }
+
+  .meteor-header {
+    text-decoration: none;
+    color: $textcolor2;
+  }
+
+  .nav-bar {
+    @include flex-column(flex-start, center);
+    background-color: $color1;
+    position: fixed;
+    top: 9.8vh;
+    width: 100vw;
+    min-height: 20vh;
+    max-height: 30vh;
+    overflow: hidden;
+    z-index: 1;
+    a {
+      @include flex-row(center, center);
+      text-decoration: none;
+      color: $textcolor2;
+      height: 2vh;
+      width: 100vw;
+      height: 4vh;
+      border: solid;
+      border-bottom: none;
+      border-color: $color1;
+      border-width: thin;
+    }
+  }
+
+  .hide-nav {
+    min-height: 0vh;
+    max-height: 0vh;
+  }
+}
+//LAPTOP DESKTOP MEDIA QUERY
+@media (min-width: 960px) {
+  .header {
+    @include flex-row(flex-start, center);
+    flex-direction: row;
+    background-color: $secondary;
+    height: 10vh;
+    font-family: $font1;
+    span {
+      color: $textcolor1;
+      margin-left: 3vh;
+    }
+    img {
+      height: 0.001px;
+      width: 0.001px;
+      margin-right: 3vh;
+    }
+  }
+
+  .meteor-header {
+    text-decoration: none;
+    color: $textcolor2;
+  }
+
+  // .nav-bar {
+  //   // @include flex-column(flex-start, center);
+  //   @include flex-row(center, center);
+  //   background-color: none;
+  //   position: static;
+  //   top: 0;
+  //   width: 100vw;
+  //   height: 20vh;
+  //   overflow: visible;
+  //   a {
+  //     @include flex-row(center, center);
+  //     text-decoration: none;
+  //     color: $textcolor2;
+  //     width: 5vw;
+  //     height: 4vh;
+  //     border: none;
+  //     border-bottom: none;
+  //     border-color: $color1;
+  //     border-width: thin;
+  //   }
+  // }
+
+  .hide-nav {
+    height: 0vh;
+  }
+  .desktop-nav {
+    margin-left: 30vw;
+    @include flex-row(flex-start, center);
+    background-color: none;
+    position: static;
+    top: 0;
+    width: 0;
+    height: 0;
+    overflow: visible;
+    a {
+      margin-left: 4vw;
+      @include flex-row(center, center);
+      text-decoration: none;
+      color: $textcolor1;
+      width: 5vw;
+      height: 0;
+      border: none;
+      border-bottom: none;
+      border-color: $color1;
+      border-width: thin;
+    }
+  }
 }

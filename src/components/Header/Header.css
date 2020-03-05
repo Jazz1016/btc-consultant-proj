@@ -1,8 +1,262 @@
-.nav-bar {
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: stretch;
-  align-content: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+  background-color: #96897b;
+  height: 10vh;
+  font-family: "Candara", sans-serif;
 }
+
+.header span {
+  color: black;
+  margin-left: 3vh;
+}
+
+.header img {
+  height: 20px;
+  width: 20px;
+  margin-right: 3vh;
+}
+
+.meteor-header {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #dbad6a;
+  position: fixed;
+  top: 9.8vh;
+  width: 100vw;
+  min-height: 20vh;
+  max-height: 30vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav-bar a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: white;
+  height: 2vh;
+  width: 100vw;
+  height: 4vh;
+  border: solid;
+  border-bottom: none;
+  border-color: #dbad6a;
+  border-width: thin;
+}
+
+.hide-nav {
+  min-height: 0vh;
+  max-height: 0vh;
+}
+
+@media (min-width: 680px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    background-color: #96897b;
+    height: 10vh;
+    font-family: "Candara", sans-serif;
+  }
+  .header span {
+    color: black;
+    margin-left: 5vh;
+  }
+  .header img {
+    height: 20px;
+    width: 20px;
+    margin-right: 5vh;
+  }
+  .meteor-header {
+    text-decoration: none;
+    color: white;
+  }
+  .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #dbad6a;
+    position: fixed;
+    top: 9.8vh;
+    width: 100vw;
+    min-height: 20vh;
+    max-height: 30vh;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .nav-bar a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    color: white;
+    height: 2vh;
+    width: 100vw;
+    height: 4vh;
+    border: solid;
+    border-bottom: none;
+    border-color: #dbad6a;
+    border-width: thin;
+  }
+  .hide-nav {
+    min-height: 0vh;
+    max-height: 0vh;
+  }
+}
+
+@media (min-width: 960px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    flex-direction: row;
+    background-color: #96897b;
+    height: 10vh;
+    font-family: "Candara", sans-serif;
+  }
+  .header span {
+    color: black;
+    margin-left: 3vh;
+  }
+  .header img {
+    height: 0.001px;
+    width: 0.001px;
+    margin-right: 3vh;
+  }
+  .meteor-header {
+    text-decoration: none;
+    color: white;
+  }
+  .hide-nav {
+    height: 0vh;
+  }
+  .desktop-nav {
+    margin-left: 30vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: none;
+    position: static;
+    top: 0;
+    width: 0;
+    height: 0;
+    overflow: visible;
+  }
+  .desktop-nav a {
+    margin-left: 4vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    color: black;
+    width: 5vw;
+    height: 0;
+    border: none;
+    border-bottom: none;
+    border-color: #dbad6a;
+    border-width: thin;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

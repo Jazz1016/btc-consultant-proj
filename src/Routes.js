@@ -16,16 +16,16 @@ import Product from "./components/Products/Product";
 export default (
   <Switch>
     <Route exact path="/" component={Landing} />
+    <Route path="/newsletter" component={Newsletter} />
+    <Route path="/shop" component={Shop} />
     <Route path="/about" component={About} />
+    <Route exact path="/contact" component={Contact} />
+    <Route path="/cart" component={Cart} />
     <Route path="/auth" component={Auth} />
     <Route path="/admin" component={Admin} />
     <Route path="/blog/:id" component={Blog} />
     <Route path="/blogEdit/:id" component={BlogEdit} />
-    <Route exact path="/contact" component={Contact} />
     <Route path="/contact/:id" component={ContactMsg} />
-    <Route path="/cart" component={Cart} />
     <Route path="/product/:id" component={Product} />
-    <Route path="/newsletter" component={Newsletter} />
-    <Route path="/shop" component={Shop} />
   </Switch>
 );

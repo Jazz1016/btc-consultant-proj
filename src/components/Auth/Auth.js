@@ -13,7 +13,7 @@ const Auth = props => {
   return (
     <div>
       {logReg ? (
-        <section>
+        <section className='auth-box'>
           <p>Email</p>
           <input
             onChange={e => {
@@ -64,7 +64,8 @@ const Auth = props => {
           </span>
         </section>
       ) : (
-        <section>
+        <section className='auth-box'>
+          
           <h4>Email</h4>
           <input
             onChange={e => {
@@ -100,6 +101,8 @@ const Auth = props => {
           >
             Not Signed up? click here
           </span>
+          
+          
         </section>
       )}
     </div>

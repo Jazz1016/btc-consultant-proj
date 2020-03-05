@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
-import "./Header.css";
+
 import { logout, checkUser } from "../../redux/reducers/userReducer";
 import { getCart } from "../../redux/reducers/cartReducer";
 import axios from "axios";
 import { connect } from "react-redux";
+import "./Header.css";
+import svgimg from "./assets/hamburger.svg";
 
 const Header = props => {
   const { isadmin, user_id } = props.userReducer.user;
   const { getCart } = props;
+  const [dropdown, toggleDropdown] = useState(false);
   useEffect(() => {
     props.checkUser();
     if (user_id) {
@@ -20,55 +23,142 @@ const Header = props => {
   return (
     <>
       {isadmin ? (
-        <div className="nav-bar">
-          <Link to="/">
-            <p>home</p>
+        <section className="header">
+          <img
+            src={svgimg}
+            onClick={() => {
+              toggleDropdown(!dropdown);
+            }}
+          />
+          <Link className="meteor-header" to="/">
+            <span>Meteor</span>
           </Link>
-          <Link to="/auth">
-            <p>login</p>
-          </Link>
-          {/* <Link to="/"><p>blog</p></Link> */}
-          <Link to="/cart">
-            <p>cart</p>
-          </Link>
-          <Link to="/contact">
-            <p>contact</p>
-          </Link>
-          {/* <Link to="/"><p>landing</p></Link> */}
-          <Link to="/newsletter">
-            <p>Newsletter</p>
-          </Link>
-          <Link to="/shop">
-            <p>shop</p>
-          </Link>
-          <Link to="/admin">
-            <p>admin</p>
-          </Link>
-        </div>
+
+          <div
+            className={dropdown ? "nav-bar" : "nav-bar hide-nav desktop-nav"}
+          >
+            <Link
+              to="/newsletter"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Newsletter</p>
+            </Link>
+            <Link
+              to="/shop"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Shop</p>
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>About</p>
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Contact</p>
+            </Link>
+            <Link
+              to="/auth"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Login</p>
+            </Link>
+            <Link
+              to="/cart"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Cart</p>
+            </Link>
+            <Link
+              to="/admin"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Admin</p>
+            </Link>
+          </div>
+        </section>
       ) : (
-        <div className="nav-bar">
-          <Link to="/">
-            <p>home</p>
+        <section className="header">
+          <img
+            src={svgimg}
+            onClick={() => {
+              toggleDropdown(!dropdown);
+            }}
+          />
+          <Link className="meteor-header" to="/">
+            <span>Meteor</span>
           </Link>
-          <Link to="/auth">
-            <p>login</p>
-          </Link>
-          {/* <Link to="/"><p>blog</p></Link> */}
-          <Link to="/cart">
-            <p>cart</p>
-          </Link>
-          <Link to="/contact">
-            <p>contact</p>
-          </Link>
-          {/* <Link to="/"><p>landing</p></Link> */}
-          <Link to="/newsletter">
-            <p>Newsletter</p>
-          </Link>
-          <Link to="/shop">
-            <p>shop</p>
-          </Link>
-          {/* <Link to="/"></Link> */}
-        </div>
+          <div
+            className={dropdown ? "nav-bar" : "nav-bar hide-nav desktop-nav"}
+          >
+            <Link
+              to="/newsletter"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Newsletter</p>
+            </Link>
+            <Link
+              to="/shop"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Shop</p>
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>About</p>
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Contact</p>
+            </Link>
+            <Link
+              to="/auth"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Login</p>
+            </Link>
+            <Link
+              to="/cart"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Cart</p>
+            </Link>
+          </div>
+        </section>
       )}
     </>
   );

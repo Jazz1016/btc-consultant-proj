@@ -24,7 +24,9 @@ const Subscribe = props => {
               setEmailInput(e.target.value);
             }}
             value={emailInput}
+            placeholder="subscribe here!"
           />
+          <button></button>
         </section>
       )}
     </div>
