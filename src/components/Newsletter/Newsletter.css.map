@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,kBAAkB,CAAC;ECsBjB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EDvBM,MAAM;ECwB3B,WAAW,EDxBkB,MAAM;CACpC;;AAED,AAAA,OAAO,CAAC;EACN,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,QAAQ,EAAE,MAAM;CACjB",
+    "mappings": "AAEA,AAAA,kBAAkB,CAAC;ECsBjB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EDvBM,MAAM;ECwB3B,WAAW,EDxBkB,MAAM;CACpC",
     "sources": [
         "Newsletter.scss",
         "../../sass/_vars.scss"

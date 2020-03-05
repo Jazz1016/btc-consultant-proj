@@ -57,6 +57,8 @@
   max-height: 30vh;
   overflow: hidden;
   z-index: 1;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .nav-bar a {
@@ -145,6 +147,8 @@
     max-height: 30vh;
     overflow: hidden;
     z-index: 1;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
   }
   .nav-bar a {
     display: -webkit-box;

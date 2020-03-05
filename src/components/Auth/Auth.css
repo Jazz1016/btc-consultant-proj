@@ -1,1 +1,41 @@
-/* No CSS *//*# sourceMappingURL=auth.css.map */
+.auth-big-daddy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #96897b;
+  margin-top: 10vh;
+  min-height: 30vh;
+  max-height: 55vh;
+  width: 55vw;
+  overflow: hidden;
+  -webkit-box-shadow: 0.5px 0.5px 0.5px 0.5px #dfd5a5;
+          box-shadow: 0.5px 0.5px 0.5px 0.5px #dfd5a5;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=auth.css.map */

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { login, register } from "../../redux/reducers/userReducer";
-// import { Link } from "react-router-dom";
+import "./auth.css";
 
 const Auth = props => {
   const [email, setEmail] = useState("");
@@ -11,10 +11,10 @@ const Auth = props => {
   const [logReg, setLogReg] = useState(false);
   useEffect(() => {}, []);
   return (
-    <div>
+    <div className="auth-big-daddy">
       {logReg ? (
-        <section className='auth-box'>
-          <p>Email</p>
+        <section className="auth-box">
+          <h5>Email</h5>
           <input
             onChange={e => {
               setEmail(e.target.value);
@@ -22,21 +22,21 @@ const Auth = props => {
             value={email}
             type="email"
           />
-          <p>Password</p>
+          <h5>Password</h5>
           <input
             onChange={e => {
               setPass(e.target.value);
             }}
             value={pass}
           />
-          <p>First name</p>
+          <h5>First name</h5>
           <input
             onChange={e => {
               setFirst(e.target.value);
             }}
             value={first}
           />
-          <p>Last name</p>
+          <h5>Last name</h5>
           <input
             onChange={e => {
               setLast(e.target.value);
@@ -51,6 +51,7 @@ const Auth = props => {
           >
             Register
           </button>
+          <br />
           <span
             onClick={() => {
               setLogReg(!logReg);
@@ -62,11 +63,11 @@ const Auth = props => {
           >
             Already have an account? click here
           </span>
+          <br />
         </section>
       ) : (
-        <section className='auth-box'>
-          
-          <h4>Email</h4>
+        <section className="auth-box">
+          <h5>Email</h5>
           <input
             onChange={e => {
               setEmail(e.target.value);
@@ -74,7 +75,7 @@ const Auth = props => {
             value={email}
             type="email"
           />
-          <h4>Password</h4>
+          <h5>Password</h5>
           <input
             onChange={e => {
               setPass(e.target.value);
@@ -101,8 +102,7 @@ const Auth = props => {
           >
             Not Signed up? click here
           </span>
-          
-          
+          <br />
         </section>
       )}
     </div>

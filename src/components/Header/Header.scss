@@ -32,6 +32,8 @@
   max-height: 30vh;
   overflow: hidden;
   z-index: 1;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
   a {
     @include flex-row(center, center);
     text-decoration: none;
@@ -85,6 +87,8 @@
     max-height: 30vh;
     overflow: hidden;
     z-index: 1;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     a {
       @include flex-row(center, center);
       text-decoration: none;
