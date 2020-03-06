@@ -10,12 +10,12 @@ const Newsletter = props => {
       setBlogs(res.data);
     });
   }, []);
-  let blogDisplay = blogs.map(el => {
+  let blogDisplay = blogs.map((el, i) => {
     return (
-      <div>
+      <div key={i}>
         <p>{el.title}</p>
         <Link to={`/blog/${el.blog_id}`}>
-          <img src={el.blog_img} />
+          <img src={el.blog_img} alt="thing to make error in console go" />
         </Link>
       </div>
     );

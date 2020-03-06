@@ -19,7 +19,7 @@ const Header = props => {
         getCart(res.data);
       });
     }
-  }, [user_id]);
+  }, []);
   return (
     <>
       {isadmin ? (

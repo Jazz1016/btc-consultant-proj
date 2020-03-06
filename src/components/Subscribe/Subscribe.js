@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Subscribe = props => {
   const [emailInput, setEmailInput] = useState("");
@@ -14,6 +15,13 @@ const Subscribe = props => {
             }}
             value={emailInput}
           />
+          <button
+            onClick={() => {
+              axios.post(`/api/mail`, { emailInput });
+            }}
+          >
+            Subscribe
+          </button>
         </section>
       ) : (
         <section>
@@ -21,12 +29,20 @@ const Subscribe = props => {
           <br />
           <input
             onChange={e => {
+              console.log(e.target.value);
               setEmailInput(e.target.value);
             }}
             value={emailInput}
             placeholder="subscribe here!"
           />
-          <button></button>
+          <button
+            onClick={() => {
+              console.log(emailInput);
+              axios.post(`/api/mail`, { emailInput });
+            }}
+          >
+            Subscribe
+          </button>
         </section>
       )}
     </div>

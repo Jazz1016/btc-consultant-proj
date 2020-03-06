@@ -9,7 +9,7 @@ const ContactMsg = props => {
     axios.get(`/api/contact/${props.match.params.id}`).then(res => {
       setMsg(res.data[0]);
     });
-  }, []);
+  }, [props.match.params.id]);
   // console.log(msg);
   return (
     <div>

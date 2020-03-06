@@ -9,7 +9,7 @@ const Product = props => {
     axios.get(`/api/product/${props.match.params.id}`).then(res => {
       setProduct(res.data[0]);
     });
-  }, []);
+  }, [props.match.params.id]);
   return (
     <div>
       <section>{product.product_img}</section>

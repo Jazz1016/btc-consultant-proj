@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { getCart } from "../../redux/reducers/cartReducer";
@@ -7,13 +7,16 @@ const Cart = props => {
   const { cart } = props.cartReducer;
   const { user_id } = props.userReducer.user;
   // console.log(props);
-  useEffect(() => {}, [cart]);
-
+  useEffect(() => {
+    // axios.get(`/api/products`).then(res => {
+    //   setProductsArr(res.data);
+    // });
+  }, [cart]);
   let cartDisplay = cart.map(el => {
     return (
       <div>
         <h6>{el.product_name}</h6>
-        <img src={el.product_img} />
+        <img src={el.product_img} alt={`${el.product_name}`} />
         <p>{el.price}</p>
         <button
           onClick={() => {
@@ -28,6 +31,8 @@ const Cart = props => {
       </div>
     );
   });
+  console.log(cart);
+
   return (
     <div>
       <header>Cart header</header>

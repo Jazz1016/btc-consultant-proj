@@ -11,6 +11,7 @@ const Contact = props => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+
   return (
     <div className="flex-contact">
       <header className="contact-header">Contact me</header>

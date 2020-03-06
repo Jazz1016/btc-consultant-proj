@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Products from "../Products/Products";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./Shop.css";
 
 const Shop = () => {
@@ -12,7 +12,7 @@ const Shop = () => {
     });
   }, []);
   // console.log(products);
-  let productDisplay = products.map(product => {
+  let productDisplay = products.map((product, i) => {
     return <Products key={product.product_id} product={product} />;
   });
   return (

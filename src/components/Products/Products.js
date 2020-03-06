@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/reducers/cartReducer";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import "./products.css";
 
@@ -10,10 +10,9 @@ const Products = props => {
   const {
     product_id,
     product_name,
-    product_img,
+
     price,
-    description,
-    available
+    description
   } = props.product;
   const { user_id } = props.user;
   //   console.log(props);
