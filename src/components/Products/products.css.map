@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAC;EACZ,UAAU,EAAE,GAAG;CAChB",
+    "sources": [
+        "products.scss",
+        "../../sass/_vars.scss"
+    ],
+    "names": [],
+    "file": "products.css"
+}

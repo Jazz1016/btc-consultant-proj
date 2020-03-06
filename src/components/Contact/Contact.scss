@@ -1,0 +1,78 @@
+@import "../../sass/vars";
+
+.flex-contact {
+  @include flex-column(flex-start, center);
+}
+
+.contact-box {
+  margin-top: 5vh;
+  min-height: 55vh;
+  width: 80vw;
+  background-color: $color1;
+  border-radius: 20px;
+  h5 {
+    margin-top: 10px;
+  }
+}
+.contact-header {
+  @include flex-column();
+  font-size: 30px;
+  height: 7vh;
+  width: 100vw;
+  background-color: $secondary;
+  font-family: $font1;
+}
+.message-input {
+}
+
+@media (min-width: 680px) {
+  .flex-contact {
+    @include flex-column(flex-start, center);
+  }
+
+  .contact-box {
+    margin-top: 5vh;
+    min-height: 55vh;
+    max-height: 90vh;
+    width: 80vw;
+    background-color: $color1;
+    border-radius: 20px;
+    h5 {
+      margin-top: 10px;
+    }
+  }
+  .contact-header {
+    @include flex-column();
+    font-size: 30px;
+    height: 7vh;
+    width: 100vw;
+    background-color: $secondary;
+    font-family: $font1;
+  }
+}
+
+@media (min-width: 980px) {
+  .flex-contact {
+    @include flex-column(flex-start, center);
+  }
+
+  .contact-box {
+    margin-top: 5vh;
+    min-height: 70vh;
+    max-height: 90vh;
+    width: 40vw;
+    background-color: $color1;
+    border-radius: 20px;
+    h5 {
+      margin-top: 10px;
+    }
+  }
+  .contact-header {
+    @include flex-column();
+    font-size: 30px;
+    height: 7vh;
+    width: 100vw;
+    background-color: $secondary;
+    font-family: $font1;
+  }
+}

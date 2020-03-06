@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,iBAAiB,CAAC;ECsBhB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAHM,YAAY;EAIjC,WAAW,EAJ4B,MAAM;CDnB9C;;AAED,AAAA,YAAY,CAAC;EACX,IAAI,ECGE,SAAS,EAAE,UAAU;EDF3B,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,KAAK;EACZ,gBAAgB,ECTN,OAAO;CDUlB",
+    "sources": [
+        "Shop.scss",
+        "../../sass/_vars.scss"
+    ],
+    "names": [],
+    "file": "Shop.css"
+}

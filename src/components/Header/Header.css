@@ -239,6 +239,7 @@
     overflow: visible;
   }
   .desktop-nav a {
+    margin-top: 2vh;
     margin-left: 4vw;
     display: -webkit-box;
     display: -ms-flexbox;

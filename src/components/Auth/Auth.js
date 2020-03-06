@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { login, register } from "../../redux/reducers/userReducer";
 import "./auth.css";
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
 
 const Auth = props => {
   const [email, setEmail] = useState("");
@@ -15,7 +17,7 @@ const Auth = props => {
       {logReg ? (
         <section className="auth-box">
           <h5>Email</h5>
-          <input
+          <Input
             onChange={e => {
               setEmail(e.target.value);
             }}
@@ -23,34 +25,35 @@ const Auth = props => {
             type="email"
           />
           <h5>Password</h5>
-          <input
+          <Input
             onChange={e => {
               setPass(e.target.value);
             }}
             value={pass}
           />
           <h5>First name</h5>
-          <input
+          <Input
             onChange={e => {
               setFirst(e.target.value);
             }}
             value={first}
           />
           <h5>Last name</h5>
-          <input
+          <Input
             onChange={e => {
               setLast(e.target.value);
             }}
             value={last}
           />
           <br />
-          <button
+          <Button
             onClick={() => {
               props.register(email, pass, first, last);
             }}
+            color="red"
           >
             Register
-          </button>
+          </Button>
           <br />
           <span
             onClick={() => {
@@ -68,15 +71,16 @@ const Auth = props => {
       ) : (
         <section className="auth-box">
           <h5>Email</h5>
-          <input
+          <Input
             onChange={e => {
+              console.log("hit");
               setEmail(e.target.value);
             }}
             value={email}
             type="email"
           />
           <h5>Password</h5>
-          <input
+          <Input
             onChange={e => {
               setPass(e.target.value);
             }}
@@ -84,13 +88,14 @@ const Auth = props => {
             type="password"
           />
           <br />
-          <button
+          <Button
             onClick={() => {
               props.login(email, pass);
             }}
           >
             Login
-          </button>
+          </Button>
+          <br />
           <span
             onClick={() => {
               setLogReg(!logReg);

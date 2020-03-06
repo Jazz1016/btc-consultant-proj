@@ -30,7 +30,13 @@ const Header = props => {
               toggleDropdown(!dropdown);
             }}
           />
-          <Link className="meteor-header" to="/">
+          <Link
+            className="meteor-header"
+            to="/"
+            onClick={() => {
+              toggleDropdown(false);
+            }}
+          >
             <span>Meteor</span>
           </Link>
 
@@ -103,7 +109,13 @@ const Header = props => {
               toggleDropdown(!dropdown);
             }}
           />
-          <Link className="meteor-header" to="/">
+          <Link
+            className="meteor-header"
+            to="/"
+            onClick={() => {
+              toggleDropdown(false);
+            }}
+          >
             <span>Meteor</span>
           </Link>
           <div

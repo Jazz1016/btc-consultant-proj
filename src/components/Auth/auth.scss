@@ -8,15 +8,57 @@
 
 .auth-box {
   @include flex-column(center, center);
+  font-size: 15px;
   background-color: $secondary;
-  margin-top: 10vh;
+  margin-top: 5vh;
   min-height: 30vh;
-  max-height: 55vh;
-  width: 55vw;
-  overflow: hidden;
+  max-height: 80vh;
+  width: 75vw;
   //   border-style: solid;
   //   border-width: 5px;
   //   border-color: black;
   box-shadow: 0.5px 0.5px 0.5px 0.5px $color2;
   border-radius: 15px;
+  h5 {
+    margin-top: 3vh;
+  }
+  input {
+    margin-top: 5vh;
+  }
+}
+
+//TABLET MEDIA QUERY
+@media (min-width: 780px) {
+  .auth-box {
+    @include flex-column(center, center);
+    font-size: 15px;
+    background-color: $secondary;
+    margin-top: 5vh;
+    min-height: 30vh;
+    max-height: 80vh;
+    width: 40vw;
+    //   border-style: solid;
+    //   border-width: 5px;
+    //   border-color: black;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px $color2;
+    border-radius: 15px;
+  }
+}
+
+//PC MEDIA QUERY
+@media (min-width: 960px) {
+  .auth-box {
+    @include flex-column(center, center);
+    font-size: 15px;
+    background-color: $secondary;
+    margin-top: 5vh;
+    min-height: 30vh;
+    max-height: 80vh;
+    width: 40vw;
+    //   border-style: solid;
+    //   border-width: 5px;
+    //   border-color: black;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px $color2;
+    border-radius: 15px;
+  }
 }

@@ -167,6 +167,7 @@
     height: 0;
     overflow: visible;
     a {
+      margin-top: 2vh;
       margin-left: 4vw;
       @include flex-row(center, center);
       text-decoration: none;
