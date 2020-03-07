@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,IAAI;EACZ,eAAe,EAAE,KAAK;EACtB,mBAAmB,EAAE,MAAM;ECmB3B,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAHM,YAAY;EAIjC,WAAW,EAJ4B,MAAM;CDZ9C;;AATD,AAKE,cALY,CAKZ,CAAC,CAAC;EACA,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "ImageFlip.scss",
+        "../../../sass/_vars.scss"
+    ],
+    "names": [],
+    "file": "ImageFlip.css"
+}

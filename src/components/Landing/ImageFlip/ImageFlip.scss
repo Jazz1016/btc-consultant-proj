@@ -1,0 +1,12 @@
+@import "../../../sass/vars";
+
+.image-flipper {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  @include flex-column();
+  p {
+    background-color: grey;
+    width: 40vw;
+  }
+}
