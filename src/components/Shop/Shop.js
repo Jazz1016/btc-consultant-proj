@@ -12,7 +12,7 @@ const Shop = () => {
     });
   }, []);
   // console.log(products);
-  let productDisplay = products.map((product, i) => {
+  let productDisplay = products.map(product => {
     return <Products key={product.product_id} product={product} />;
   });
   return (

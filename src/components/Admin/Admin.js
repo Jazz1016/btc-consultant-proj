@@ -10,17 +10,14 @@ import { v4 as randomString } from "uuid";
 const Admin = props => {
   const [messageArr, setMessageArr] = useState([]);
   const [blogArr, setBlogArr] = useState([]);
+  const [url, setUrl] = useState("");
   const [blogObj, setBlogObj] = useState({
-    url: "",
     title: "",
     body: ""
   });
   const inputs = e => {
-    setBlogObj({
-      [e.target.name]: e.target.value
-    });
+    setBlogObj({ ...blogObj, [e.target.name]: e.target.value });
   };
-  console.log(props);
   useEffect(() => {
     if (props.user.isadmin) {
       axios.get(`/api/contact`).then(res => {
@@ -33,7 +30,6 @@ const Admin = props => {
       props.history.push("/");
     }
   }, [props.history, props.user.isadmin]);
-  console.log(messageArr, blogArr);
   let messageDisplay = messageArr.map(el => {
     return (
       <Link to={`/contact/${el.contact_msg_id}`}>
@@ -78,7 +74,7 @@ const Admin = props => {
     axios
       .put(signedRequest, file, options)
       .then(response => {
-        setBlogObj({ ...blogObj, url });
+        setUrl(url);
         // THEN DO SOMETHING WITH THE URL. SEND TO DB USING POST REQUEST OR SOMETHING
       })
       .catch(err => {
@@ -86,8 +82,8 @@ const Admin = props => {
       });
   };
 
-  const { url, title, body } = blogObj;
-  console.log(blogObj);
+  console.log(blogObj.title);
+  const { title, body } = blogObj;
   return (
     <div>
       <section>
@@ -98,9 +94,21 @@ const Admin = props => {
         <h3>New blog post:</h3>
         <img src={`${url}`} />
         <input type="file" onChange={e => getSignedRequest(e.target.files)} />
-        <input value={title} onChange={e => inputs(e)} />
-        <input value={body} onChange={e => inputs(e)} />
-        <button onClick={() => axios.post(`/api/blog`, { url, title, body })}>
+        <input value={title} name="title" onChange={e => inputs(e)} />
+        <input value={body} name="body" onChange={e => inputs(e)} />
+        <button
+          onClick={() => {
+            axios
+              .post(`/api/blog`, {
+                blog_img: url,
+                title: title,
+                body: blogObj.body
+              })
+              .then(res => {
+                console.log(res);
+              });
+          }}
+        >
           upload blog post
         </button>
       </section>

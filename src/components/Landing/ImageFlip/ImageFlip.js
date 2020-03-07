@@ -17,7 +17,7 @@ const ImageFlip = props => {
   useEffect(() => {
     const interval = setInterval(
       () => setImgIndex(Math.floor(Math.random() * (imgArr.length - 1))),
-      10000
+      5000
     );
     return () => {
       return clearInterval(interval);

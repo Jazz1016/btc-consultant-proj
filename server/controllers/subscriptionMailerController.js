@@ -23,7 +23,7 @@ const sendEmail = (req, res) => {
   let mailOptions = {
     from: EMAIL,
     to: email,
-    subject: "Update Certification",
+    subject: "Welcome to the newsletter",
     text: emailText
   };
   console.log(mailOptions);

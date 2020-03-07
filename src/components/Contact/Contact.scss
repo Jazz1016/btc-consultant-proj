@@ -2,6 +2,7 @@
 
 .flex-contact {
   @include flex-column(flex-start, center);
+  min-height: 90vh;
 }
 
 .contact-box {

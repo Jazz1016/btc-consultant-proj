@@ -13,6 +13,7 @@ module.exports = {
   },
   newBlogPost: async (req, res) => {
     //posts new blog posts to the db
+    console.log(req.body);
     const db = req.app.get("db").blog;
     const { blog_img, title, body } = req.body;
     try {
@@ -42,6 +43,7 @@ module.exports = {
     const db = req.app.get("db").blog;
     const { id } = req.params;
     try {
+      // console.log(id);
       await db.delete_blog_post(id);
       return res.sendStatus(200);
     } catch {
