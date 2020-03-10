@@ -1,2 +1,20 @@
-.flex {
+@import "../../sass/vars";
+
+.landing-holder {
+  @include flex-column();
+}
+
+.flex-products-landing {
+  @include flex-row();
+  flex-wrap: wrap;
+}
+
+@media (min-width: 680px) {
+  .flex-products-landing {
+    width: 60vw;
+    @include flex-row();
+  }
+}
+
+@media (min-width: 980px) {
 }

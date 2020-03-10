@@ -3,32 +3,39 @@ import { connect } from "react-redux";
 import { addToCart } from "../../redux/reducers/cartReducer";
 import axios from "axios";
 // import { Link } from "react-router-dom";
-import Card from "react-bootstrap/Card";
+import { Card, Button } from "react-bootstrap";
 import "./products.css";
+import { Link } from "react-router-dom";
 
 const Products = props => {
   const {
     product_id,
     product_name,
-
     price,
-    description
+    description,
+    product_img
   } = props.product;
   const { user_id } = props.user;
-  //   console.log(props);
+  console.log(props);
+  const truncateString = (str, num) => {
+    if (str.length <= num) {
+      return str;
+    }
+    return str.slice(0, num) + "...";
+  };
   return (
     <div>
-      <Card style={{ width: "18rem" }} className="product-card">
-        <Card.Img
-          variant="top"
-          src="https://cdn02.nintendo-europe.com/media/images/08_content_images/others_2/kidsclub/new_noe_banners/H2x1_KidsClub_ReadAndDiscover_YoshisFacts.jpg"
-        />
+      <Card style={{ width: "20rem" }} className="product-card">
+        <Card.Img variant="top" src={`${product_img}`} />
         <Card.Body>
-          <Card.Title>{product_name}</Card.Title>
+          <Card.Title style={{ "font-size": "20px" }}>
+            {product_name}
+          </Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{price}</Card.Subtitle>
-          <Card.Text>{description}</Card.Text>
-          <Card.Link to={`/product/${product_id}`}>Details</Card.Link>
-          <Card.Link
+          <Card.Text>{truncateString(description, 30)}</Card.Text>
+          <Link to={`/product/${product_id}`}>Details</Link>
+          <Button
+            className="products-button"
             onClick={() => {
               axios.post(`/api/carts`, { user_id, product_id }).then(res => {
                 props.addToCart(res.data);
@@ -36,7 +43,7 @@ const Products = props => {
             }}
           >
             Add to cart
-          </Card.Link>
+          </Button>
         </Card.Body>
       </Card>
       {/* <Link to={`/product/${product_id}`}>

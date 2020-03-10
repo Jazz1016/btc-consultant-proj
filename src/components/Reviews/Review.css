@@ -1,4 +1,4 @@
-.landing-holder {
+.review-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,26 +13,24 @@
           align-items: center;
 }
 
-.flex-products-landing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+.review-box {
+  background-color: beige;
+  width: 90vw;
+  border-radius: 20px;
+  margin-top: 4vh;
 }
 
 @media (min-width: 680px) {
-  .flex-products-landing {
-    width: 60vw;
+  .review-box {
+    background-color: beige;
+    width: 55vw;
+    border-radius: 20px;
+    margin-top: 4vh;
+  }
+}
+
+@media (min-width: 980px) {
+  .review-center {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -46,5 +44,13 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  .review-box {
+    background-color: beige;
+    width: 30vw;
+    border-radius: 20px;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    overflow: hidden;
+  }
 }
-/*# sourceMappingURL=Landing.css.map */
+/*# sourceMappingURL=Review.css.map */

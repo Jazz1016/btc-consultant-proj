@@ -14,7 +14,8 @@
           align-items: center;
   -ms-flex-direction: row-reverse;
       flex-direction: row-reverse;
-  background-color: #96897b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cd9fcc), to(#0a014f));
+  background-image: linear-gradient(#cd9fcc, #0a014f);
   height: 10vh;
   font-family: "Candara", sans-serif;
 }
@@ -22,11 +23,13 @@
 .header span {
   color: black;
   margin-left: 3vh;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .header img {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   margin-right: 3vh;
 }
 
@@ -49,16 +52,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #dbad6a;
-  position: fixed;
+  background-color: #e4c2c6;
+  position: absolute;
   top: 9.8vh;
   width: 100vw;
-  min-height: 20vh;
-  max-height: 30vh;
+  max-height: 50vh;
   overflow: hidden;
   z-index: 1;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
+  font-size: 24px;
 }
 
 .nav-bar a {
@@ -76,13 +79,13 @@
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: white;
-  height: 2vh;
+  color: black;
+  height: 5vh;
   width: 100vw;
-  height: 4vh;
+  height: 8vh;
   border: solid;
   border-bottom: none;
-  border-color: #dbad6a;
+  border-color: #e4c2c6;
   border-width: thin;
 }
 
@@ -108,13 +111,14 @@
             align-items: center;
     -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
-    background-color: #96897b;
+    background-color: #cd9fcc;
     height: 10vh;
     font-family: "Candara", sans-serif;
   }
   .header span {
     color: black;
     margin-left: 5vh;
+    font-size: 28px;
   }
   .header img {
     height: 20px;
@@ -139,16 +143,15 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-color: #dbad6a;
-    position: fixed;
+    position: absolute;
     top: 9.8vh;
     width: 100vw;
-    min-height: 20vh;
     max-height: 30vh;
     overflow: hidden;
     z-index: 1;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
+    font-size: 14px;
   }
   .nav-bar a {
     display: -webkit-box;
@@ -165,14 +168,9 @@
         -ms-flex-align: center;
             align-items: center;
     text-decoration: none;
-    color: white;
     height: 2vh;
     width: 100vw;
     height: 4vh;
-    border: solid;
-    border-bottom: none;
-    border-color: #dbad6a;
-    border-width: thin;
   }
   .hide-nav {
     min-height: 0vh;
@@ -196,7 +194,7 @@
         -ms-flex-align: center;
             align-items: center;
     flex-direction: row;
-    background-color: #96897b;
+    background-color: #cd9fcc;
     height: 10vh;
     font-family: "Candara", sans-serif;
   }
@@ -255,12 +253,11 @@
         -ms-flex-align: center;
             align-items: center;
     text-decoration: none;
-    color: black;
     width: 5vw;
     height: 0;
     border: none;
     border-bottom: none;
-    border-color: #dbad6a;
+    border-color: #e4c2c6;
     border-width: thin;
   }
 }

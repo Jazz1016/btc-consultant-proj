@@ -16,9 +16,9 @@ const Shop = () => {
     return <Products key={product.product_id} product={product} />;
   });
   return (
-    <div className="products-display">
+    <div className="shop-comp">
       <header className="shop-header">Become an expert!</header>
-      <section>{productDisplay}</section>
+      <section className="products-display">{productDisplay}</section>
     </div>
   );
 };

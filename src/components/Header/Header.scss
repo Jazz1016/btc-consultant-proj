@@ -1,18 +1,21 @@
 @import "../../sass/vars";
+// linear-gradient(orange, purple);
 
 .header {
   @include flex-row(space-between, center);
   flex-direction: row-reverse;
-  background-color: $secondary;
+  background-image: linear-gradient($secondary, $primary);
   height: 10vh;
   font-family: $font1;
   span {
     color: $textcolor1;
     margin-left: 3vh;
+    font-size: 32px;
+    font-weight: bold;
   }
   img {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     margin-right: 3vh;
   }
 }
@@ -25,22 +28,22 @@
 .nav-bar {
   @include flex-column(flex-start, center);
   background-color: $color1;
-  position: fixed;
+  position: absolute;
   top: 9.8vh;
   width: 100vw;
-  min-height: 20vh;
-  max-height: 30vh;
+  max-height: 50vh;
   overflow: hidden;
   z-index: 1;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
+  font-size: 24px;
   a {
     @include flex-row(center, center);
     text-decoration: none;
-    color: $textcolor2;
-    height: 2vh;
+    color: $textcolor1;
+    height: 5vh;
     width: 100vw;
-    height: 4vh;
+    height: 8vh;
     border: solid;
     border-bottom: none;
     border-color: $color1;
@@ -64,6 +67,7 @@
     span {
       color: $textcolor1;
       margin-left: 5vh;
+      font-size: 28px;
     }
     img {
       height: 20px;
@@ -79,27 +83,21 @@
 
   .nav-bar {
     @include flex-column(flex-start, center);
-    background-color: $color1;
-    position: fixed;
+    position: absolute;
     top: 9.8vh;
     width: 100vw;
-    min-height: 20vh;
     max-height: 30vh;
     overflow: hidden;
     z-index: 1;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
+    font-size: 14px;
     a {
       @include flex-row(center, center);
       text-decoration: none;
-      color: $textcolor2;
       height: 2vh;
       width: 100vw;
       height: 4vh;
-      border: solid;
-      border-bottom: none;
-      border-color: $color1;
-      border-width: thin;
     }
   }
 
@@ -171,7 +169,6 @@
       margin-left: 4vw;
       @include flex-row(center, center);
       text-decoration: none;
-      color: $textcolor1;
       width: 5vw;
       height: 0;
       border: none;

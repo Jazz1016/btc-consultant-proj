@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
+import "./Subscribe.css";
 
 const Subscribe = props => {
   const [emailInput, setEmailInput] = useState("");
@@ -8,25 +10,25 @@ const Subscribe = props => {
       {props.text ? (
         <section>
           <p>{props.text}</p>
-          <br />
           <input
             onChange={e => {
               setEmailInput(e.target.value);
             }}
             value={emailInput}
           />
-          <button
+          <Button
+            variant=""
             onClick={() => {
               axios.post(`/api/mail`, { emailInput });
             }}
           >
             Subscribe
-          </button>
+          </Button>
+          <br />
         </section>
       ) : (
         <section>
           <p>Seize your financial destiny!</p>
-          <br />
           <input
             onChange={e => {
               console.log(e.target.value);
@@ -35,14 +37,15 @@ const Subscribe = props => {
             value={emailInput}
             placeholder="subscribe here!"
           />
-          <button
+          <Button
             onClick={() => {
               console.log(emailInput);
               axios.post(`/api/mail`, { emailInput });
             }}
           >
             Subscribe
-          </button>
+          </Button>
+          <br />
         </section>
       )}
     </div>

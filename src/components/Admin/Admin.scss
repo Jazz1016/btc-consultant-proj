@@ -1,0 +1,9 @@
+@import "../../sass/vars";
+
+.admin-holder {
+  @include flex-column();
+}
+
+.grid-holder {
+  width: 80vw;
+}

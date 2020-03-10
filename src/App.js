@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div>{Routes}</div>
+      <div className="temp-text-color">{Routes}</div>
       <Footer />
     </div>
   );

@@ -7,10 +7,10 @@ import img4 from "./assets/image4.jpg";
 import img5 from "./assets/image5.jpg";
 
 const ImageFlip = props => {
-  const text1 = "asdfas",
-    text2 = "fasdfas",
-    text3 = "akfhdas",
-    text4 = "asdfkashbdf";
+  const text1 = "Have complete control over your money",
+    text2 = "Get industry insights from a leading expert",
+    text3 = "Live the good life!",
+    text4 = "akadhfakjsdl";
   const imgArr = [img1, img2, img3, img4, img5];
   const textArr = [text1, text2, text3, text4];
   const [imgIndex, setImgIndex] = useState(0);
@@ -31,7 +31,9 @@ const ImageFlip = props => {
         transition: "1s"
       }}
     >
-      <p>Take what is rightfully yours!</p>
+      <section>
+        <p>{textArr[imgIndex]}</p>
+      </section>
     </div>
   );
 };

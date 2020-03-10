@@ -13,15 +13,23 @@ const Newsletter = props => {
     });
   }, []);
   let blogDisplay = blogs.map((el, i) => {
-    console.log(el);
+    // console.log(el);
+    const truncateString = (str, num) => {
+      if (str.length <= num) {
+        return str;
+      }
+      return str.slice(0, num) + "...";
+    };
     return (
       <div key={i} className="spread-grow">
         <Card style={{ width: "18rem" }} className="product-card">
           <Card.Img variant="top" src={el.blog_img} />
           <Card.Body>
             <Card.Title>{el.title}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">{el.body}</Card.Subtitle>
-            <Card.Link to={`/blog/${el.blog_id}`}>View</Card.Link>
+            <Card.Subtitle className="mb-2 text-muted">
+              {truncateString(el.body, 30)}
+            </Card.Subtitle>
+            <Link to={`/blog/${el.blog_id}`}>View</Link>
           </Card.Body>
         </Card>
         {/* <p>{}</p>
@@ -33,8 +41,8 @@ const Newsletter = props => {
   });
   return (
     <div className="center-newsletter">
-      <header></header>
-      {blogDisplay}
+      <header className="newsletter-header">header</header>
+      <section className="blog-box">{blogDisplay}</section>
     </div>
   );
 };

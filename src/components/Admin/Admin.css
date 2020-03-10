@@ -1,4 +1,4 @@
-.main-footer {
+.admin-holder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,13 +11,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 8vh;
-  width: 100%;
-  background-color: #cd9fcc;
-  font-size: 12px;
 }
 
-.main-footer p {
-  width: 40vw;
+.grid-holder {
+  width: 80vw;
 }
-/*# sourceMappingURL=Footer.css.map */
+/*# sourceMappingURL=Admin.css.map */

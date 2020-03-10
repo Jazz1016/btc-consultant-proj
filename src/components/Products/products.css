@@ -1,4 +1,19 @@
 .product-card {
   margin-top: 2vh;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.product-card:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.products-button {
+  margin-left: 1vw;
 }
 /*# sourceMappingURL=products.css.map */

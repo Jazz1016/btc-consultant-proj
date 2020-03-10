@@ -1,12 +1,35 @@
 @import "../../sass/vars";
 
+.shop-comp {
+  @include flex-column();
+  background-color: $color2;
+}
+
 .products-display {
   @include flex-column();
+  margin-bottom: 4vh;
+  margin-top: 10vh;
 }
 
 .shop-header {
+  @include flex-row();
   font: $font1;
-  height: 7vh;
-  width: 100vw;
-  background-color: $secondary;
+  height: 10vh;
+  width: 100%;
+  background-color: $primary;
+  position: absolute;
+  top: 9vh;
+}
+@media (min-width: 680px) {
+  .products-display {
+    width: 70vw;
+    @include flex-row();
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 980px) {
+  .products-display {
+    width: 90vw;
+  }
 }

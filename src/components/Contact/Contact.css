@@ -19,7 +19,7 @@
   margin-top: 5vh;
   min-height: 55vh;
   width: 80vw;
-  background-color: #dbad6a;
+  background-color: #e4c2c6;
   border-radius: 20px;
 }
 
@@ -43,7 +43,7 @@
   font-size: 30px;
   height: 7vh;
   width: 100vw;
-  background-color: #96897b;
+  background-color: #0a014f;
   font-family: "Candara", sans-serif;
 }
 
@@ -68,7 +68,7 @@
     min-height: 55vh;
     max-height: 90vh;
     width: 80vw;
-    background-color: #dbad6a;
+    background-color: #e4c2c6;
     border-radius: 20px;
   }
   .contact-box h5 {
@@ -90,7 +90,6 @@
     font-size: 30px;
     height: 7vh;
     width: 100vw;
-    background-color: #96897b;
     font-family: "Candara", sans-serif;
   }
 }
@@ -116,7 +115,7 @@
     min-height: 70vh;
     max-height: 90vh;
     width: 40vw;
-    background-color: #dbad6a;
+    background-color: #e4c2c6;
     border-radius: 20px;
   }
   .contact-box h5 {
@@ -138,7 +137,6 @@
     font-size: 30px;
     height: 7vh;
     width: 100vw;
-    background-color: #96897b;
     font-family: "Candara", sans-serif;
   }
 }

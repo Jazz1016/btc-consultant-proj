@@ -1,0 +1,39 @@
+@import "../../sass/vars";
+
+.review-center {
+  @include flex-column();
+}
+
+.review-box {
+  background-color: beige;
+  width: 90vw;
+  border-radius: 20px;
+  margin-top: 4vh;
+}
+
+@media (min-width: 680px) {
+  .review-center {
+  }
+
+  .review-box {
+    background-color: beige;
+    width: 55vw;
+    border-radius: 20px;
+    margin-top: 4vh;
+  }
+}
+
+@media (min-width: 980px) {
+  .review-center {
+    @include flex-row();
+  }
+
+  .review-box {
+    background-color: beige;
+    width: 30vw;
+    border-radius: 20px;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    overflow: hidden;
+  }
+}

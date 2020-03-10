@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,eAAe,CAAC;ECsBd,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAHM,YAAY;EAIjC,WAAW,EAJ4B,MAAM;CDnB9C;;AAED,AAAA,sBAAsB,CAAC;ECWrB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAHG,YAAY;EAI9B,WAAW,EAJyB,MAAM;EDR1C,SAAS,EAAE,IAAI;CAChB;;AAED,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AAAA,sBAAsB,CAAC;IACrB,KAAK,EAAE,IAAI;ICIb,OAAO,EAAE,IAAI;IACb,cAAc,EAAE,GAAG;IACnB,eAAe,EAHG,YAAY;IAI9B,WAAW,EAJyB,MAAM;GDDzC",
     "sources": [
-        "Landing.scss"
+        "Landing.scss",
+        "../../sass/_vars.scss"
     ],
     "names": [],
     "file": "Landing.css"

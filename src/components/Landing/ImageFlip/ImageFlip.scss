@@ -1,12 +1,25 @@
 @import "../../../sass/vars";
 
 .image-flipper {
+  margin-top: 3vh;
   height: 50vh;
+  width: 100vw;
   background-size: cover;
   background-position: center;
   @include flex-column();
-  p {
-    background-color: grey;
+  section {
     width: 40vw;
+  }
+}
+
+@media (min-width: 680px) {
+  .image-flipper {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 960px) {
+  .image-flipper {
+    height: 70vh;
   }
 }

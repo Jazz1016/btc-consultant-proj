@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAC;ECsBZ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAHM,YAAY;EAIjC,WAAW,EAJ4B,MAAM;CDnB9C;;AAED,AAAA,YAAY,CAAC;EACX,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "Admin.scss",
+        "../../sass/_vars.scss"
+    ],
+    "names": [],
+    "file": "Admin.css"
+}

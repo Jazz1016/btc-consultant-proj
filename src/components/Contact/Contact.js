@@ -4,14 +4,17 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 import "./Contact.css";
+import { toast } from "react-toastify";
+
 // import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+const update = () =>
+  toast.update(toastId, { type: toast.TYPE.INFO, autoClose: 5000 });
 
 const Contact = props => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-
   return (
     <div className="flex-contact">
       <header className="contact-header">Contact me</header>
@@ -52,6 +55,7 @@ const Contact = props => {
           variant="success"
           onClick={() => {
             axios.post(`/api/contact`, { name, subject, email, message });
+            update();
           }}
         >
           Send

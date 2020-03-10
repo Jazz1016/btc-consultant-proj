@@ -18,7 +18,7 @@ const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const app = express();
 app.use(express.json());
 
-// <-------------------------------------------->
+// <------------------S3 Code-------------------------->
 const aws = require("aws-sdk");
 
 const { S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY } = process.env;
@@ -46,7 +46,7 @@ app.get("/sign-s3", (req, res) => {
       console.log(err);
       return res.end();
     }
-    console.log(data);
+    // console.log(data);
     const returnData = {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
@@ -55,7 +55,7 @@ app.get("/sign-s3", (req, res) => {
     return res.send(returnData);
   });
 });
-// <-------------------------------------------->
+// <--------------------S3 Code------------------------>
 
 app.use(
   session({

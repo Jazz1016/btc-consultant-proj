@@ -1,0 +1,5 @@
+@import "../../sass/vars";
+
+.blog-edit-center {
+  @include flex-column();
+}

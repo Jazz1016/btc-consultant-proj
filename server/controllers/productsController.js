@@ -37,7 +37,7 @@ module.exports = {
   },
   editProduct: async (req, res) => {
     //allows editing of a product
-    console.log(req.body, req.params);
+    // console.log(req.body, req.params);
     const db = req.app.get("db").products;
     const { id } = req.params;
     const {
@@ -59,16 +59,19 @@ module.exports = {
   },
   deleteProduct: async (req, res) => {
     //allows admin to delete a product
-    const db = req.app.get("db").products;
+    const db = req.app.get("db");
     const { id } = req.params;
-    await db
-      .delete_product(id)
-      .then(() => {
+    try {
+      await db.cart.delete_prod_from_carts(id);
+      await db.products.delete_product(id).then(() => {
         return res.sendStatus(200);
-      })
-      .catch(err => {
-        console.log(err);
       });
+    } catch {
+      err => {
+        console.log(err);
+        res.sendStatus(err);
+      };
+    }
   },
   oneProduct: async (req, res) => {
     //used for getting one product will run in tandem with edit

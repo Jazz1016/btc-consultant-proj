@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
 
 const ContactMsg = props => {
   const [msg, setMsg] = useState({});
@@ -13,6 +15,7 @@ const ContactMsg = props => {
   // console.log(msg);
   return (
     <div>
+      <br />
       <p>{msg.email}</p>
       <p>{msg.name}</p>
       <p>{msg.subject}</p>
