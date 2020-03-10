@@ -180,7 +180,7 @@ const Admin = props => {
         <h3>New Blog Post:</h3>
         <Form>
           <Form.Group controlId="formGroupBlogImage">
-            <Form.Control
+            <input
               type="file"
               onChange={e => getSignedRequest(e.target.files)}
             />

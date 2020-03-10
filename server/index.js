@@ -12,7 +12,8 @@ const contactCtrl = require(`./controllers/contactCtrl`),
   subCtrl = require("./controllers/subscriptionController");
 (checkUser = require("./middlewares/checkUser")),
   (checkAdmin = require("./middlewares/checkAdmin")),
-  (mailerCtrl = require("./controllers/subscriptionMailerController"));
+  (mailerCtrl = require("./controllers/subscriptionMailerController")),
+  (coinCTRL = require("./controllers/coinMarketCapController"));
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
 const app = express();
@@ -124,3 +125,6 @@ app.post(`/api/subscription`, subCtrl.addSub);
 //Nodemailer endpoints
 app.post("/api/mail", mailerCtrl.sendEmail);
 // app.post("/mail/blog/:id", mailerCtrl.sendEmail);
+
+//CMC request endpoints
+app.get("/api/cmc", coinCTRL.getCoinData);

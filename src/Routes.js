@@ -12,6 +12,9 @@ import Landing from "./components/Landing/Landing";
 import Newsletter from "./components/Newsletter/Newsletter";
 import Shop from "./components/Shop/Shop";
 import Product from "./components/Products/Product";
+import MembersArea from "./components/MembersArea/MembersArea";
+import Charts from "./components/MembersArea/Charts/Charts";
+import ChatWithMembers from "./components/MembersArea/ChatWithMembers/ChatWithMembers";
 
 export default (
   <Switch>
@@ -27,5 +30,22 @@ export default (
     <Route path="/blogEdit/:id" component={BlogEdit} />
     <Route path="/contact/:id" component={ContactMsg} />
     <Route path="/product/:id" component={Product} />
+    <Route path="/member">
+      <MembersArea />
+      <Route
+        exact
+        path="/member/charts"
+        render={() => {
+          return <Charts />;
+        }}
+      />
+      <Route
+        exact
+        path="/member/chat"
+        render={() => {
+          return <ChatWithMembers />;
+        }}
+      />
+    </Route>
   </Switch>
 );

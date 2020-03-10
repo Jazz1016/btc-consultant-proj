@@ -12,6 +12,7 @@ const Header = props => {
   const { isadmin, user_id } = props.userReducer.user;
   const { getCart } = props;
   const [dropdown, toggleDropdown] = useState(false);
+  const [bool, setBool] = useState(false);
   useEffect(() => {
     props.checkUser();
     if (user_id) {
