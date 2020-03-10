@@ -5,12 +5,13 @@ import img2 from "./assets/image2.jpg";
 import img3 from "./assets/image3.jpg";
 import img4 from "./assets/image4.jpg";
 import img5 from "./assets/image5.jpg";
+import { Link } from "react-router-dom";
 
 const ImageFlip = props => {
   const text1 = "Have complete control over your money",
     text2 = "Get industry insights from a leading expert",
     text3 = "Live the good life!",
-    text4 = "akadhfakjsdl";
+    text4 = "Claim your monetary sovereignty";
   const imgArr = [img1, img2, img3, img4, img5];
   const textArr = [text1, text2, text3, text4];
   const [imgIndex, setImgIndex] = useState(0);
@@ -31,8 +32,11 @@ const ImageFlip = props => {
         transition: "1s"
       }}
     >
-      <section>
+      <section className="img-flip-text-box">
         <p>{textArr[imgIndex]}</p>
+      </section>
+      <section className="aasss">
+        <Link to="/shop">View Programs ></Link>
       </section>
     </div>
   );

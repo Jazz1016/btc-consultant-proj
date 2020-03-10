@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,oBAAoB,CAAC;EACnB,KAAK,ECKM,KAAK;CDJjB",
     "sources": [
-        "Subscribe.scss"
+        "Subscribe.scss",
+        "../../sass/_vars.scss"
     ],
     "names": [],
     "file": "Subscribe.css"

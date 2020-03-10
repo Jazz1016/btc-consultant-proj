@@ -11,15 +11,49 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.image-flipper section {
+.aasss {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e4c2c6), to(#fae8eb));
+  background-image: linear-gradient(0.25turn, #e4c2c6, #fae8eb);
+  border-radius: 15px;
+  height: 7vh;
+  width: 24vw;
+  margin-top: 10vh;
+}
+
+.aasss a {
+  background-color: none;
+}
+
+.img-flip-text-box {
+  font-size: 24px;
   width: 40vw;
+  background-color: none;
+  font-weight: bolder;
+  color: black;
+  opacity: 75%;
+  border-radius: 20px;
 }
 
 @media (min-width: 680px) {
@@ -31,6 +65,9 @@
 @media (min-width: 960px) {
   .image-flipper {
     height: 70vh;
+  }
+  .aasss {
+    width: 14vw;
   }
 }
 /*# sourceMappingURL=ImageFlip.css.map */

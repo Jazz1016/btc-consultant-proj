@@ -4,6 +4,7 @@ import Routes from "./Routes";
 import Header from "./components/Header/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (

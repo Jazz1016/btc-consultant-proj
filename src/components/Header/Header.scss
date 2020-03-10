@@ -61,18 +61,12 @@
   .header {
     @include flex-row(space-between, center);
     flex-direction: row-reverse;
-    background-color: $secondary;
     height: 10vh;
     font-family: $font1;
     span {
       color: $textcolor1;
       margin-left: 5vh;
       font-size: 28px;
-    }
-    img {
-      height: 20px;
-      width: 20px;
-      margin-right: 5vh;
     }
   }
 
@@ -111,7 +105,6 @@
   .header {
     @include flex-row(flex-start, center);
     flex-direction: row;
-    background-color: $secondary;
     height: 10vh;
     font-family: $font1;
     span {

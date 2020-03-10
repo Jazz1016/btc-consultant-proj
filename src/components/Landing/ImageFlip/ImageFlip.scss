@@ -6,10 +6,30 @@
   width: 100vw;
   background-size: cover;
   background-position: center;
-  @include flex-column();
-  section {
-    width: 40vw;
+  @include flex-column(center);
+}
+.aasss {
+  @include flex-row();
+  text-decoration: none;
+  color: $textcolor2;
+  background-image: linear-gradient(0.25turn, $color1, $color2);
+
+  border-radius: 15px;
+  height: 7vh;
+  width: 24vw;
+  margin-top: 10vh;
+  a {
+    background-color: none;
   }
+}
+.img-flip-text-box {
+  font-size: 24px;
+  width: 40vw;
+  background-color: none;
+  font-weight: bolder;
+  color: black;
+  opacity: 75%;
+  border-radius: 20px;
 }
 
 @media (min-width: 680px) {
@@ -21,5 +41,8 @@
 @media (min-width: 960px) {
   .image-flipper {
     height: 70vh;
+  }
+  .aasss {
+    width: 14vw;
   }
 }

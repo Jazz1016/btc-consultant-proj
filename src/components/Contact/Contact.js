@@ -4,12 +4,11 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 import "./Contact.css";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-// import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-const update = () =>
-  toast.update(toastId, { type: toast.TYPE.INFO, autoClose: 5000 });
-
+// import ButtonToolbar from "react-bootstrap/ButtonToolbar"
+const notify = () => toast("Wow so easy !");
 const Contact = props => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -55,12 +54,19 @@ const Contact = props => {
           variant="success"
           onClick={() => {
             axios.post(`/api/contact`, { name, subject, email, message });
-            update();
+            toast.success("Message sent", {
+              position: toast.POSITION.BOTTOM_RIGHT
+            });
+            setEmail("");
+            setName("");
+            setSubject("");
+            setMessage("");
           }}
         >
           Send
         </Button>
       </section>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 };

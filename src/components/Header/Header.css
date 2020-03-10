@@ -111,7 +111,6 @@
             align-items: center;
     -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
-    background-color: #cd9fcc;
     height: 10vh;
     font-family: "Candara", sans-serif;
   }
@@ -119,11 +118,6 @@
     color: black;
     margin-left: 5vh;
     font-size: 28px;
-  }
-  .header img {
-    height: 20px;
-    width: 20px;
-    margin-right: 5vh;
   }
   .meteor-header {
     text-decoration: none;
@@ -194,7 +188,6 @@
         -ms-flex-align: center;
             align-items: center;
     flex-direction: row;
-    background-color: #cd9fcc;
     height: 10vh;
     font-family: "Candara", sans-serif;
   }
