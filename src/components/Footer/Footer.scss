@@ -1,12 +1,15 @@
 @import "../../sass/vars";
 
 .main-footer {
-  @include flex-column();
+  @include flex-column(center);
   height: 8vh;
   width: 100%;
-  background-color: $secondary;
+  background-color: $header;
   font-size: 12px;
+  color: rgb(78, 78, 78);
   p {
+    margin-top: 2vh;
+    @include flex-row(center, center);
     width: 40vw;
   }
 }

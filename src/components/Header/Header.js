@@ -5,7 +5,7 @@ import { logout, checkUser } from "../../redux/reducers/userReducer";
 import { getCart } from "../../redux/reducers/cartReducer";
 import axios from "axios";
 import { connect } from "react-redux";
-import "./Header.css";
+import "./Header.scss";
 import svgimg from "./assets/hamburger.svg";
 
 const Header = props => {
@@ -100,6 +100,14 @@ const Header = props => {
             >
               <p>Admin</p>
             </Link>
+            <Link
+              to="/member"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Members</p>
+            </Link>
           </div>
         </section>
       ) : (
@@ -169,6 +177,14 @@ const Header = props => {
               }}
             >
               <p>Cart</p>
+            </Link>
+            <Link
+              to="/member"
+              onClick={() => {
+                toggleDropdown(false);
+              }}
+            >
+              <p>Members</p>
             </Link>
           </div>
         </section>

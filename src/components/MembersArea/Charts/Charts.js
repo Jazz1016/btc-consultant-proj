@@ -12,10 +12,10 @@ const Charts = () => {
   const xAxis = crypto.map((date, i) => {
     return {
       x: new Date(date.date),
-      y: date.close
+      y: [date.close, date.high, date.low, date.open]
     };
   });
-  // console.log(xAxis.splice(30));
+  console.log(xAxis.splice(30));
   console.log(xAxis);
   const options = {
     theme: "light2",
@@ -34,7 +34,7 @@ const Charts = () => {
     },
     data: [
       {
-        type: "line",
+        type: "candlestick",
         showInLegend: true,
         name: "Intel Corporation",
         yValueFormatString: "$###0.00",

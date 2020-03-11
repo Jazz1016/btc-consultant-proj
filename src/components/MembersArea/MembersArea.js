@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./MembersArea.css";
+import "./MembersArea.scss";
 import { Switch, Route, Link } from "react-router-dom";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Charts from "./Charts/Charts";

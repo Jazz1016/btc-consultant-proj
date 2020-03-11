@@ -1,5 +1,16 @@
 @import "../../sass/vars";
 
 .subscribe-outer-div {
+  h6 {
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: $info;
+  }
+  p {
+    font-size: 12px;
+  }
+  z-index: 6;
+  background-color: $background;
+  width: 100vw;
   color: $textcolor2;
 }

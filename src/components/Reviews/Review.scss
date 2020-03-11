@@ -2,22 +2,38 @@
 
 .review-center {
   @include flex-column();
+  z-index: 6;
 }
 
 .review-box {
-  background-color: beige;
+  @include flex-column();
   width: 90vw;
-  border-radius: 20px;
+  height: 250px;
+  border-radius: 25px;
   margin-top: 4vh;
+  box-shadow: -0.25px -0.5px 1px 0.5px $primary;
+  color: $textcolor2;
+}
+
+.light-box {
+  background-color: $light;
+}
+
+.info-box {
+  background-color: $info;
+}
+
+.success-box {
+  background-color: $success;
 }
 
 @media (min-width: 680px) {
-  .review-center {
+  s .review-center {
   }
 
   .review-box {
-    background-color: beige;
     width: 55vw;
+    height: 225px;
     border-radius: 20px;
     margin-top: 4vh;
   }
@@ -29,8 +45,8 @@
   }
 
   .review-box {
-    background-color: beige;
     width: 30vw;
+    height: 280px;
     border-radius: 20px;
     margin-top: 4vh;
     margin-left: 2vw;

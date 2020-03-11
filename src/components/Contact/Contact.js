@@ -3,7 +3,7 @@ import axios from "axios";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
-import "./Contact.css";
+import "./Contact.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

@@ -5,13 +5,7 @@
   @include flex-row(space-between, center);
   flex-direction: row-reverse;
   height: 10vh;
-  font-family: $font1;
-  span {
-    color: $textcolor2;
-    margin-left: 3vh;
-    font-size: 32px;
-    font-weight: bold;
-  }
+  background-color: $header;
   img {
     height: 30px;
     width: 30px;
@@ -22,31 +16,42 @@
 .meteor-header {
   text-decoration: none;
   color: $textcolor2;
+  margin-left: 3vh;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.meteor-header:hover {
+  text-decoration: none;
 }
 
 .nav-bar {
   @include flex-column(flex-start, center);
-  background-color: $color1;
   position: absolute;
-  top: 9.8vh;
+  top: 9vh;
   width: 100vw;
+  min-height: 20vh;
   max-height: 50vh;
   overflow: hidden;
-  z-index: 1;
+  z-index: 15;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  font-size: 24px;
+  font-size: 20px;
+  background-color: $background;
   a {
     @include flex-row(center, center);
     text-decoration: none;
     color: $textcolor2;
-    height: 5vh;
     width: 100vw;
     height: 8vh;
     border: solid;
     border-bottom: none;
-    border-color: $color1;
+    border-color: $info;
     border-width: thin;
+  }
+  a:hover {
+    background-color: $light;
+    text-decoration: none;
   }
 }
 
@@ -61,9 +66,7 @@
     @include flex-row(space-between, center);
     flex-direction: row-reverse;
     height: 10vh;
-    font-family: $font1;
     span {
-      color: $textcolor1;
       margin-left: 5vh;
       font-size: 28px;
     }
@@ -71,7 +74,6 @@
 
   .meteor-header {
     text-decoration: none;
-    color: $textcolor2;
   }
 
   .nav-bar {
@@ -79,18 +81,17 @@
     position: absolute;
     top: 9.8vh;
     width: 100vw;
-    max-height: 30vh;
+    max-height: 55vh;
     overflow: hidden;
-    z-index: 1;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    font-size: 14px;
+    font-size: 24px;
     a {
       @include flex-row(center, center);
       text-decoration: none;
       height: 2vh;
       width: 100vw;
-      height: 4vh;
+      height: 7vh;
     }
   }
 
@@ -102,12 +103,10 @@
 //LAPTOP DESKTOP MEDIA QUERY
 @media (min-width: 960px) {
   .header {
-    @include flex-row(flex-start, center);
+    @include flex-row(space-between, center);
     flex-direction: row;
     height: 10vh;
-    font-family: $font1;
     span {
-      color: $textcolor1;
       margin-left: 3vh;
     }
     img {
@@ -119,54 +118,35 @@
 
   .meteor-header {
     text-decoration: none;
-    color: $textcolor2;
   }
-
-  // .nav-bar {
-  //   // @include flex-column(flex-start, center);
-  //   @include flex-row(center, center);
-  //   background-color: none;
-  //   position: static;
-  //   top: 0;
-  //   width: 100vw;
-  //   height: 20vh;
-  //   overflow: visible;
-  //   a {
-  //     @include flex-row(center, center);
-  //     text-decoration: none;
-  //     color: $textcolor2;
-  //     width: 5vw;
-  //     height: 4vh;
-  //     border: none;
-  //     border-bottom: none;
-  //     border-color: $color1;
-  //     border-width: thin;
-  //   }
-  // }
 
   .hide-nav {
     height: 0vh;
   }
   .desktop-nav {
-    margin-left: 30vw;
-    @include flex-row(flex-start, center);
+    margin-left: 150px;
+    @include flex-row(flex-start, flex-start);
     background-color: none;
-    position: static;
+    position: relative;
     top: 0;
-    width: 0;
     height: 0;
     overflow: visible;
+    margin-bottom: 35px;
     a {
-      margin-top: 2vh;
-      margin-left: 4vw;
-      @include flex-row(center, center);
+      @include flex-row(center, flex-end);
+      font-size: 14px;
+      margin-left: 5px;
       text-decoration: none;
-      width: 5vw;
-      height: 0;
+      width: 75px;
+      height: 50px;
       border: none;
       border-bottom: none;
-      border-color: $color1;
-      border-width: thin;
+      border-radius: 20px;
+    }
+    a:hover {
+      border-style: solid;
+      border-color: $info;
+      background-color: white;
     }
   }
 }

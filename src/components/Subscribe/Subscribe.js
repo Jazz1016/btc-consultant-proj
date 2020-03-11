@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
-import "./Subscribe.css";
+import "./Subscribe.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -45,6 +45,8 @@ const Subscribe = props => {
         </section>
       ) : (
         <section>
+          <h6>Sign up for the Newsletter</h6>
+          <br />
           <p>Seize your financial destiny!</p>
           <form
             onSubmit={e => {

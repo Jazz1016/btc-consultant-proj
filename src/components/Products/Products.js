@@ -4,7 +4,7 @@ import { addToCart } from "../../redux/reducers/cartReducer";
 import axios from "axios";
 // import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
-import "./products.css";
+import "./products.scss";
 import { Link } from "react-router-dom";
 
 const Products = props => {

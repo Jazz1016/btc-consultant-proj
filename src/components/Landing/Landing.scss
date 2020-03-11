@@ -2,6 +2,110 @@
 
 .landing-holder {
   @include flex-column();
+  overflow: hidden;
+}
+
+.landing-text-box {
+  position: absolute;
+  top: 11vh;
+  left: 15vw;
+  height: 100px;
+  width: 100px;
+  z-index: 6;
+  color: $textcolor2;
+
+  img {
+    position: relative;
+    right: 75px;
+    top: 40px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: $secondary;
+  }
+  h4 {
+    font-weight: bold;
+    font-size: 22px;
+  }
+  p {
+    font-size: 12px;
+  }
+  a {
+    @include flex-row();
+    font-size: 12px;
+    height: 30px;
+    width: 100px;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $info;
+    color: $textcolor2;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $textcolor2;
+    text-decoration: none;
+    background-color: $info;
+  }
+}
+
+.landing-design {
+  @include flex-column(space-between);
+  margin-top: 50px;
+  margin-left: 150px;
+  background-color: $background;
+  height: 175px;
+  width: 650px;
+  overflow: hidden;
+  transform: rotate(247deg);
+  z-index: 5;
+}
+.landing-design-bar {
+  @include flex-row(space-between);
+  width: 100%;
+}
+
+.top-grey {
+  width: 250px;
+  height: 35px;
+  margin-right: 30px;
+  border-radius: 34px;
+  background-color: $light;
+}
+.bottom-grey {
+  width: 250px;
+  height: 35px;
+  border-radius: 34px;
+  background-color: $light;
+}
+.bottom-pink {
+  width: 250px;
+  height: 35px;
+  margin-left: 40px;
+  border-radius: 34px;
+  background-color: $info;
+}
+
+.top-pink {
+  width: 240px;
+  height: 35px;
+  border-radius: 34px;
+  background-color: $info;
+}
+
+.bottom-blue {
+  width: 250px;
+  height: 35px;
+  border-radius: 40px;
+  background-color: $success;
+}
+
+.top-blue {
+  width: 250px;
+  height: 35px;
+  margin-right: 60px;
+  border-radius: 34px;
+  background-color: $success;
 }
 
 .flex-products-landing {
@@ -10,11 +114,164 @@
 }
 
 @media (min-width: 680px) {
+  .landing-text-box {
+    top: 12vh;
+    left: 25vw;
+    height: 100px;
+    width: 200px;
+    img {
+      position: relative;
+      right: 80px;
+      top: 45px;
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
+      background-color: $secondary;
+    }
+    h4 {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    p {
+      font-size: 14px;
+    }
+    img {
+      height: 35px;
+      width: 35px;
+      border-radius: 15px;
+    }
+    a {
+      @include flex-row();
+      margin-left: 50px;
+      font-size: 12px;
+      height: 30px;
+      width: 100px;
+    }
+  }
+
   .flex-products-landing {
     width: 60vw;
     @include flex-row();
   }
+  .landing-design {
+    @include flex-column(space-between);
+    margin-top: 50px;
+    margin-left: 400px;
+    background-color: $background;
+    height: 180px;
+    width: 800px;
+    overflow: hidden;
+    transform: rotate(247deg);
+  }
+  .landing-design-bar {
+    @include flex-row(space-between);
+    width: 100%;
+  }
+  .top-grey {
+    width: 330px;
+    height: 45px;
+    margin-right: 30px;
+  }
+
+  .bottom-grey {
+    width: 330px;
+    height: 45px;
+  }
+  .bottom-pink {
+    width: 330px;
+    height: 45px;
+    margin-left: 40px;
+  }
+  .top-pink {
+    width: 330px;
+    height: 45px;
+  }
+  .bottom-blue {
+    width: 330px;
+    height: 45px;
+  }
+  .top-blue {
+    width: 330px;
+    height: 45px;
+    margin-right: 60px;
+  }
 }
 
 @media (min-width: 980px) {
+  .landing-text-box {
+    top: 17vh;
+    left: 25vw;
+    height: 100px;
+    width: 200px;
+    img {
+      position: relative;
+      right: 90px;
+      top: 50px;
+      height: 35px;
+      width: 35px;
+      border-radius: 20px;
+      background-color: $secondary;
+    }
+    h4 {
+      font-weight: bold;
+      font-size: 28px;
+    }
+    p {
+      font-size: 16px;
+    }
+    a {
+      @include flex-row();
+      margin-left: 35px;
+      font-size: 14px;
+      height: 40px;
+      width: 120px;
+    }
+  }
+
+  .flex-products-landing {
+    width: 60vw;
+    @include flex-row();
+  }
+  .landing-design {
+    @include flex-column(space-between);
+    margin-top: 50px;
+    margin-left: 850px;
+    background-color: $background;
+    height: 240px;
+    width: 1000px;
+    overflow: hidden;
+    transform: rotate(247deg);
+  }
+  .landing-design-bar {
+    @include flex-row(space-between);
+    width: 100%;
+  }
+  .top-grey {
+    width: 430px;
+    height: 55px;
+    margin-right: 30px;
+  }
+
+  .bottom-grey {
+    width: 430px;
+    height: 55px;
+  }
+  .bottom-pink {
+    width: 430px;
+    height: 55px;
+    margin-left: 40px;
+  }
+  .top-pink {
+    width: 430px;
+    height: 55px;
+  }
+  .bottom-blue {
+    width: 430px;
+    height: 55px;
+  }
+  .top-blue {
+    width: 430px;
+    height: 55px;
+    margin-right: 60px;
+  }
 }

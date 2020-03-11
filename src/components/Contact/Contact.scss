@@ -3,13 +3,14 @@
 .flex-contact {
   @include flex-column(flex-start, center);
   min-height: 90vh;
+  font-family: $font1;
 }
 
 .contact-box {
   margin-top: 5vh;
   min-height: 55vh;
   width: 80vw;
-  background-color: $color1;
+  background-color: $primary;
   border-radius: 20px;
   h5 {
     margin-top: 10px;
@@ -19,9 +20,10 @@
   @include flex-column();
   font-size: 30px;
   height: 7vh;
-  width: 100vw;
-  background-color: $primary;
+  width: 98.8vw;
+  background-color: $light;
   font-family: $font1;
+  color: $textcolor3;
 }
 .message-input {
 }
@@ -36,7 +38,6 @@
     min-height: 55vh;
     max-height: 90vh;
     width: 80vw;
-    background-color: $color1;
     border-radius: 20px;
     h5 {
       margin-top: 10px;
@@ -46,8 +47,6 @@
     @include flex-column();
     font-size: 30px;
     height: 7vh;
-    width: 100vw;
-    font-family: $font1;
   }
 }
 
@@ -58,10 +57,9 @@
 
   .contact-box {
     margin-top: 5vh;
-    min-height: 70vh;
-    max-height: 90vh;
+    min-height: 60vh;
+    max-height: 80vh;
     width: 40vw;
-    background-color: $color1;
     border-radius: 20px;
     h5 {
       margin-top: 10px;
@@ -71,7 +69,6 @@
     @include flex-column();
     font-size: 30px;
     height: 7vh;
-    width: 100vw;
     font-family: $font1;
   }
 }
