@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,oBAAoB,CAAC;EACnB,KAAK,ECKM,KAAK;CDJjB",
+    "mappings": "AAEA,AAAA,oBAAoB,CAAC;EACnB,KAAK,ECMM,KAAK;CDLjB",
     "sources": [
         "Subscribe.scss",
         "../../sass/_vars.scss"

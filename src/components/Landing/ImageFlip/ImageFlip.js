@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./ImageFlip.css";
+import "./ImageFlip.scss";
 import img1 from "./assets/image1.jpg";
 import img2 from "./assets/image2.jpg";
 import img3 from "./assets/image3.jpg";
@@ -35,7 +35,7 @@ const ImageFlip = props => {
       <section className="img-flip-text-box">
         <p>{textArr[imgIndex]}</p>
       </section>
-      <section className="aasss">
+      <section className="main-btn">
         <Link to="/shop">View Programs ></Link>
       </section>
     </div>

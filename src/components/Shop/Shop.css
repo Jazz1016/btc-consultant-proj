@@ -11,7 +11,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #fae8eb;
+  background-color: #ebecf0;
 }
 
 .products-display {
@@ -47,7 +47,7 @@
   font: "Candara", sans-serif;
   height: 10vh;
   width: 100%;
-  background-color: #0a014f;
+  background-color: #026aa7;
   position: absolute;
   top: 9vh;
 }

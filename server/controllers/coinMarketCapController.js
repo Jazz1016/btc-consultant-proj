@@ -6,9 +6,14 @@ module.exports = {
     console.log("hit");
     const requestOptions = {
       method: "GET",
-      uri: "https://pro-api.coinmarketcap.com/v1/cryptocurrency/map",
+      uri:
+        "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/historical",
       qs: {
-        symbol: "BTC,USDT,BNB"
+        symbol: "BTC,USDT,DASH,LTC,ETH,EOS",
+        count: "200",
+        time_start: "2018-03-10T23:59:00",
+        time_end: "",
+        invterval: "daily"
       },
       headers: {
         "X-CMC_PRO_API_KEY": CMC_PRO_API_KEY

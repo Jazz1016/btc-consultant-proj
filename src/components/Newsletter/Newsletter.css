@@ -1,5 +1,5 @@
 .center-newsletter {
-  background-color: #0a014f;
+  background-color: #026aa7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .newsletter-header {
-  background-color: #0a014f;
+  background-color: #026aa7;
   position: absolute;
   top: 9vh;
   width: 100%;

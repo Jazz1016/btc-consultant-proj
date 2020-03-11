@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import Routes from "./Routes";
 import Header from "./components/Header/Header";
 import "bootstrap/dist/css/bootstrap.min.css";

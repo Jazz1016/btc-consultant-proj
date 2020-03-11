@@ -14,14 +14,12 @@
           align-items: center;
   -ms-flex-direction: row-reverse;
       flex-direction: row-reverse;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#cd9fcc), to(#0a014f));
-  background-image: linear-gradient(#cd9fcc, #0a014f);
   height: 10vh;
   font-family: "Candara", sans-serif;
 }
 
 .header span {
-  color: black;
+  color: white;
   margin-left: 3vh;
   font-size: 32px;
   font-weight: bold;
@@ -79,7 +77,7 @@
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: black;
+  color: white;
   height: 5vh;
   width: 100vw;
   height: 8vh;

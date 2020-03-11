@@ -8,20 +8,29 @@
   background-position: center;
   @include flex-column(center);
 }
-.aasss {
+.main-btn {
   @include flex-row();
-  text-decoration: none;
-  color: $textcolor2;
-  background-image: linear-gradient(0.25turn, $color1, $color2);
+  border: 2px solid #3dddc2;
+  color: #3dddc2;
 
-  border-radius: 15px;
-  height: 7vh;
-  width: 24vw;
+  border-radius: 3px;
+  height: 50px;
+  width: 160px;
   margin-top: 10vh;
   a {
-    background-color: none;
+    text-decoration: none;
+    color: #3dddc2;
+    font-weight: bold;
   }
 }
+
+.main-btn:hover {
+  background-color: #3dddc2;
+  a {
+    color: white;
+  }
+}
+
 .img-flip-text-box {
   font-size: 24px;
   width: 40vw;
@@ -42,7 +51,7 @@
   .image-flipper {
     height: 70vh;
   }
-  .aasss {
+  .main-btn {
     width: 14vw;
   }
 }

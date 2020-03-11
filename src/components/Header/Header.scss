@@ -4,11 +4,10 @@
 .header {
   @include flex-row(space-between, center);
   flex-direction: row-reverse;
-  background-image: linear-gradient($secondary, $primary);
   height: 10vh;
   font-family: $font1;
   span {
-    color: $textcolor1;
+    color: $textcolor2;
     margin-left: 3vh;
     font-size: 32px;
     font-weight: bold;
@@ -40,7 +39,7 @@
   a {
     @include flex-row(center, center);
     text-decoration: none;
-    color: $textcolor1;
+    color: $textcolor2;
     height: 5vh;
     width: 100vw;
     height: 8vh;

@@ -13,7 +13,7 @@ const contactCtrl = require(`./controllers/contactCtrl`),
 (checkUser = require("./middlewares/checkUser")),
   (checkAdmin = require("./middlewares/checkAdmin")),
   (mailerCtrl = require("./controllers/subscriptionMailerController")),
-  (coinCTRL = require("./controllers/coinMarketCapController"));
+  (coinCTRL = require("./controllers/coinDeskController"));
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
 const app = express();
@@ -127,4 +127,5 @@ app.post("/api/mail", mailerCtrl.sendEmail);
 // app.post("/mail/blog/:id", mailerCtrl.sendEmail);
 
 //CMC request endpoints
-app.get("/api/cmc", coinCTRL.getCoinData);
+// app.get("/api/cmc", coinCTRL.getCoinData);
+app.get("/api/coindesk", coinCTRL.getBTCPrices);
