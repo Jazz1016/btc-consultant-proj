@@ -29,7 +29,7 @@ const Landing = props => {
     <div className="landing-outermost">
       <section className="landing-holder">
         <section className="landing-text-box">
-          <img src={meteor} />
+          <img src={meteor} alt="meteor logo" />
           <h4>Create a Fortune</h4>
           <p>Learn how to invest, save, and control your money</p>
 
@@ -49,8 +49,10 @@ const Landing = props => {
             <div className="top-blue"></div>
           </div>
         </div>
-        {/* <ImageFlip /> */}
+        <h6>Reviews</h6>
         <Reviews />
+        <ImageFlip />
+        Shop:
         <div className="flex-products-landing">{productDisplay}</div>
         <Subscribe />
         <br />

@@ -2,7 +2,7 @@
 
 .shop-comp {
   @include flex-column();
-  background-color: blue;
+  background-color: $secondary;
 }
 
 .products-display {
@@ -16,9 +16,10 @@
   font: $font1;
   height: 10vh;
   width: 100%;
-  background-color: $primary;
+  background-color: $header;
   position: absolute;
   top: 9vh;
+  color: $textcolor2;
 }
 @media (min-width: 680px) {
   .products-display {
@@ -30,6 +31,6 @@
 
 @media (min-width: 980px) {
   .products-display {
-    width: 90vw;
+    width: 80vw;
   }
 }

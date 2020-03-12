@@ -24,8 +24,10 @@ const MembersArea = props => {
         <Breadcrumb.Item active>Data</Breadcrumb.Item>
       </Breadcrumb>
       <br />
-      <Route exact path="/member/charts" component={Charts} />
-      <Route exact path="/member/chat" component={ChatWithMembers} />
+      <Switch>
+        <Route exact path="/member/charts" component={Charts} />
+        <Route exact path="/member/chat" component={ChatWithMembers} />
+      </Switch>
     </div>
   );
 };

@@ -1,0 +1,246 @@
+@import "../../sass/vars";
+
+.product-header {
+  @include flex-row(center, center);
+  height: 8vh;
+  background-color: $header;
+  margin-bottom: 10px;
+
+  div {
+    @include flex-row(center);
+    background-color: $light;
+    width: 280px;
+    height: 1vh;
+    border-radius: 25px;
+  }
+}
+
+.product-box-holder {
+  color: $textcolor2;
+  @include flex-column();
+  width: 100vw;
+  min-height: 90vh;
+  overflow: hidden;
+
+  header {
+    height: 50px;
+    width: 100vw;
+  }
+}
+
+.product-main-display {
+  @include flex-column();
+  width: 85vw;
+}
+.prod-img {
+  height: 500px;
+  width: 320px;
+}
+.prod-pricing-box {
+  @include flex-column();
+
+  height: 70vh;
+  width: 85vw;
+  flex-wrap: wrap;
+  h4 {
+    font-size: 32px;
+    border-bottom: solid;
+    border-color: $success;
+  }
+  span {
+    color: $secondary;
+  }
+  p {
+    width: 300px;
+    font-size: 20px;
+  }
+}
+
+.crossed-out {
+  text-decoration: line-through;
+  text-decoration-thickness: 100%;
+}
+
+.prod-desc-box {
+  @include flex-column(space-between);
+  margin-top: 25px;
+  border-style: solid;
+  border-color: $secondary;
+  border-width: 0.5px;
+  width: 85vw;
+  min-height: 200px;
+  max-height: 500px;
+  overflow: hidden;
+  h4 {
+    flex-wrap: wrap;
+    color: $info;
+    font-size: 40px;
+    width: 65vw;
+  }
+  div {
+    @include flex-row(center);
+    background-color: $light;
+    width: 280px;
+    height: 1vh;
+    border-radius: 25px;
+    margin: 20px 0px 20px 0px;
+  }
+  p {
+    width: 65vw;
+    min-height: 15vh;
+    max-height: 40vh;
+  }
+}
+//TABLET STYLING ====================================================
+@media (min-width: 680px) {
+  .product-header {
+    @include flex-row(center, center);
+    height: 8vh;
+
+    div {
+      @include flex-row(center);
+      width: 500px;
+      height: 1vh;
+      border-radius: 25px;
+    }
+  }
+
+  .product-box-holder {
+    @include flex-column();
+    width: 100vw;
+    min-height: 90vh;
+    overflow: hidden;
+    header {
+      height: 50px;
+      width: 100vw;
+    }
+  }
+
+  .prod-main-display {
+  }
+  .prod-img {
+    height: 550px;
+    width: 360px;
+  }
+  .prod-pricing-box {
+    @include flex-column();
+    height: 550px;
+    width: 100vw;
+    flex-wrap: none;
+    h4 {
+      width: 40vw;
+      font-size: 44px;
+      border-bottom: solid;
+    }
+    span {
+    }
+    p {
+      width: 500px;
+      font-size: 32px;
+    }
+  }
+
+  .crossed-out {
+  }
+
+  .prod-desc-box {
+    @include flex-column(space-between);
+    width: 85vw;
+    min-height: 300px;
+    max-height: 500px;
+    h4 {
+      flex-wrap: wrap;
+      font-size: 40px;
+      width: 65vw;
+    }
+    div {
+      @include flex-row(center);
+      width: 280px;
+      height: 1vh;
+      border-radius: 25px;
+      margin: 20px 0px 20px 0px;
+    }
+    p {
+      width: 65vw;
+      min-height: 15vh;
+      max-height: 40vh;
+    }
+  }
+}
+//DESKTOP DISPLAY =======================================================
+@media (min-width: 980px) {
+  .product-header {
+    @include flex-row(center, center);
+    height: 8vh;
+
+    div {
+      @include flex-row(center);
+      width: 800px;
+      height: 1vh;
+      border-radius: 25px;
+    }
+  }
+
+  .product-box-holder {
+    @include flex-column();
+    width: 100vw;
+    min-height: 90vh;
+    overflow: hidden;
+    header {
+      height: 50px;
+      width: 100vw;
+    }
+  }
+
+  .prod-main-display {
+    @include flex-row();
+    width: 85vw;
+  }
+  .prod-img {
+    height: 550px;
+  }
+  .prod-pricing-box {
+    @include flex-column();
+    height: 50vh;
+    width: 85vw;
+    flex-wrap: wrap;
+    h4 {
+      width: 40vw;
+      font-size: 32px;
+      border-bottom: solid;
+    }
+    span {
+    }
+    p {
+      width: 300px;
+      font-size: 20px;
+    }
+  }
+
+  .crossed-out {
+  }
+
+  .prod-desc-box {
+    @include flex-column(space-between);
+    width: 85vw;
+    min-height: 300px;
+    max-height: 500px;
+    h4 {
+      flex-wrap: wrap;
+      font-size: 40px;
+      width: 65vw;
+    }
+    div {
+      @include flex-row(center);
+      width: 800px;
+      height: 1vh;
+      border-radius: 25px;
+      margin: 20px 0px 20px 0px;
+    }
+    p {
+      width: 65vw;
+      min-height: 15vh;
+      max-height: 40vh;
+    }
+  }
+}
