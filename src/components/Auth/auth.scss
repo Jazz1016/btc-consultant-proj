@@ -4,20 +4,18 @@
   @include flex-column(flex-start);
   //   background-color: $primary;
   height: 85vh;
+  color: $textcolor2;
 }
 
 .auth-box {
   @include flex-column(center, center);
   font-size: 15px;
-  background-color: $primary;
+  background-color: $light;
   margin-top: 5vh;
   min-height: 30vh;
   max-height: 80vh;
   width: 75vw;
-  //   border-style: solid;
-  //   border-width: 5px;
-  //   border-color: black;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px $primary;
+  box-shadow: -0.5px 0.5px 0.5px 0.5px $primary;
   border-radius: 15px;
   h5 {
     margin-top: 3vh;
@@ -36,9 +34,6 @@
     min-height: 30vh;
     max-height: 80vh;
     width: 40vw;
-    //   border-style: solid;
-    //   border-width: 5px;
-    //   border-color: black;
     border-radius: 15px;
   }
 }
@@ -52,9 +47,6 @@
     min-height: 30vh;
     max-height: 80vh;
     width: 40vw;
-    //   border-style: solid;
-    //   border-width: 5px;
-    //   border-color: black;
     border-radius: 15px;
   }
 }

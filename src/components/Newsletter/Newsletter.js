@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./Newsletter.css";
+import "./Newsletter.scss";
 import Card from "react-bootstrap/Card";
+import BlogsDisplay from "./BlogDisplay/BlogsDisplay";
+import Subscribe from "../Subscribe/Subscribe";
 
 const Newsletter = props => {
   const [blogs, setBlogs] = useState([]);
@@ -20,29 +22,25 @@ const Newsletter = props => {
       }
       return str.slice(0, num) + "...";
     };
-    return (
-      <div key={i} className="spread-grow">
-        <Card style={{ width: "18rem" }} className="product-card">
-          <Card.Img variant="top" src={el.blog_img} />
-          <Card.Body>
-            <Card.Title>{el.title}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {truncateString(el.body, 30)}
-            </Card.Subtitle>
-            <Link to={`/blog/${el.blog_id}`}>View</Link>
-          </Card.Body>
-        </Card>
-        {/* <p>{}</p>
-        <Link to={`/blog/${el.blog_id}`}>
-          <img src= alt="thing to make error in console go" />
-        </Link> */}
-      </div>
-    );
+    return <BlogsDisplay key={el.blog_id} blog={el} />;
   });
   return (
     <div className="center-newsletter">
       <header className="newsletter-header">header</header>
-      <section className="blog-box">{blogDisplay}</section>
+      <div className="newsletter-desktop">
+        <section className="blog-box">{blogDisplay}</section>
+        <section className="newsletter-sidebar hide-sidebar">
+          <h5>Sign up now to access the members area</h5>
+          <Link to="/auth">Sign up here</Link>
+          <img
+            className="sidebar-crypto-img"
+            src="http://cdn.images.express.co.uk/img/dynamic/151/590x/secondary/Comet-Now-348670.jpg"
+            alt="crypto image"
+          />
+          <h6>Don't miss out on all the fun</h6>
+        </section>
+      </div>
+      <Subscribe />
     </div>
   );
 };

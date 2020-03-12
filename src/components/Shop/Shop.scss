@@ -2,7 +2,7 @@
 
 .shop-comp {
   @include flex-column();
-  background-color: $secondary;
+  background-color: $background;
 }
 
 .products-display {

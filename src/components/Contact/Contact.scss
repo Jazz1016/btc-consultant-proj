@@ -10,9 +10,10 @@
   margin-top: 5vh;
   min-height: 55vh;
   width: 80vw;
-  background-color: $primary;
+  background-color: $light;
   border-radius: 20px;
   h5 {
+    color: $textcolor2;
     margin-top: 10px;
   }
 }
@@ -24,8 +25,6 @@
   background-color: $light;
   font-family: $font1;
   color: $textcolor3;
-}
-.message-input {
 }
 
 @media (min-width: 680px) {

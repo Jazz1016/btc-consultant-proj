@@ -7,7 +7,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { v4 as randomString } from "uuid";
-import "./Admin.css";
+import "./Admin.scss";
 
 const Admin = props => {
   const [messageArr, setMessageArr] = useState([]);

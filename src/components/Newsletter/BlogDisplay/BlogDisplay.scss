@@ -1,0 +1,120 @@
+@import "../../../sass/vars";
+
+.blogs-display-card {
+  @include flex-row();
+  color: $textcolor2;
+  width: 90vw;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  h4 {
+    font-size: 20px;
+    height: 50px;
+    overflow: hidden;
+  }
+  p {
+    color: orange;
+    font-size: 16px;
+    height: 70px;
+  }
+  span {
+    position: relative;
+    bottom: 45px;
+    left: 60px;
+    font-size: 14px;
+    border-radius: 5px;
+    a {
+      text-decoration: none;
+      color: $textcolor2;
+    }
+  }
+  span:hover {
+    background-color: $info;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $background;
+  }
+  img {
+    height: 130px;
+    width: 150px;
+  }
+  section {
+    width: 100%;
+    height: 130px;
+    background-color: $light;
+  }
+}
+.blogs-display-card:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}
+//TABLET STYLING ===============================================================
+@media (min-width: 680px) {
+  .blogs-display-card {
+    @include flex-row();
+    width: 90vw;
+    height: 200px;
+    margin-top: 10px;
+
+    h4 {
+      font-size: 26px;
+      height: 90px;
+      overflow: hidden;
+    }
+    p {
+      border-width: 1px;
+      font-size: 20px;
+      height: 110px;
+    }
+    span {
+      position: relative;
+      bottom: 65px;
+      left: 120px;
+      font-size: 18px;
+    }
+    img {
+      height: 200px;
+      width: 250px;
+    }
+    section {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+//DESKTOP LAPTOP STYLING==========================================================
+@media (min-width: 980px) {
+  .blogs-display-card {
+    @include flex-row();
+    width: 90%;
+    height: 200px;
+    margin-top: 10px;
+
+    h4 {
+      font-size: 26px;
+      height: 90px;
+      overflow: hidden;
+    }
+    p {
+      border-width: 1px;
+      font-size: 20px;
+      height: 110px;
+    }
+    span {
+      position: relative;
+      bottom: 65px;
+      left: 120px;
+      font-size: 18px;
+    }
+    img {
+      height: 200px;
+      width: 250px;
+    }
+    section {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}

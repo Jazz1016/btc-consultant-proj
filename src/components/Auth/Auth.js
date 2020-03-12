@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { login, register } from "../../redux/reducers/userReducer";
 import "./auth.scss";
 import Input from "@material-ui/core/Input";
-import Button from "@material-ui/core/Button";
+import { Button } from "react-bootstrap";
 
 const Auth = props => {
   const [email, setEmail] = useState("");
