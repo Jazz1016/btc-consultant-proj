@@ -45,6 +45,7 @@ const Header = props => {
             className={dropdown ? "nav-bar" : "nav-bar hide-nav desktop-nav"}
           >
             <Link
+              className=""
               to="/newsletter"
               onClick={() => {
                 toggleDropdown(false);
@@ -60,14 +61,14 @@ const Header = props => {
             >
               <p>Shop</p>
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               onClick={() => {
                 toggleDropdown(false);
               }}
             >
               <p>About</p>
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               onClick={() => {
@@ -131,6 +132,7 @@ const Header = props => {
             className={dropdown ? "nav-bar" : "nav-bar hide-nav desktop-nav"}
           >
             <Link
+              className=""
               to="/newsletter"
               onClick={() => {
                 toggleDropdown(false);
@@ -146,14 +148,14 @@ const Header = props => {
             >
               <p>Shop</p>
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               onClick={() => {
                 toggleDropdown(false);
               }}
             >
               <p>About</p>
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               onClick={() => {

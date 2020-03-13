@@ -7,13 +7,24 @@
   margin: 30px;
 }
 .product-card:hover {
-  transform: scale(1.15);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  transform: scale(1.003);
+  background-color: rgb(201, 198, 198);
 }
 .products-button {
   margin-left: 1vw;
 }
-
+.boot-card-body {
+  @include flex-column(flex-start);
+  height: 200px;
+  width: 318px;
+  overflow: hidden;
+  background-color: $header;
+}
+.boot-card-name {
+  height: 50px;
+  width: 200px;
+  overflow: hidden;
+}
 // .card:hover {
 //   transform: scale(1.15);
 //   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);

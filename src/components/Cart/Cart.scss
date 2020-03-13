@@ -1,0 +1,157 @@
+@import "../../sass/vars";
+
+.cart-route {
+  color: $textcolor2;
+  width: 100%;
+  overflow: hidden;
+  min-height: 90vh;
+}
+
+.cart-header {
+  @include flex-row();
+  background-color: $header;
+  font-size: 44px;
+  height: 20vh;
+}
+
+.cart-display {
+  @include flex-column();
+}
+
+.checkout-product-card {
+  margin-top: 20px;
+  @include flex-column(flex-start);
+  height: 350px;
+  width: 90vw;
+  //   overflow: hidden;
+  img {
+    height: 150px;
+  }
+  section {
+    @include flex-row(space-between, center);
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 90vw;
+    height: 60px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+  }
+  h5 {
+    height: 30px;
+    @include flex-row();
+    font-size: 18px;
+  }
+  h6 {
+    @include flex-row();
+    height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  p {
+    margin-top: 15px;
+    @include flex-row();
+    font-size: 18px;
+    height: 30px;
+    margin-right: 90px;
+  }
+  button {
+    margin-top: 15px;
+  }
+}
+.checkout-final {
+  margin-top: 20px;
+  @include flex-column(flex-start);
+  height: 150px;
+  section {
+    p {
+      font-size: 24px;
+    }
+  }
+}
+.cart-total-price {
+  color: $secondary;
+  font-weight: bold;
+}
+.checkout-button {
+  width: 300px;
+}
+//TABLET MEDIA QUERY ==========================================================
+@media (min-width: 680px) {
+}
+
+//PC MEDIA QUERY===============================================================
+@media (min-width: 960px) {
+  .cart-route {
+    width: 100%;
+    overflow: hidden;
+    min-height: 90vh;
+  }
+
+  .cart-header {
+    @include flex-row();
+    font-size: 44px;
+    height: 20vh;
+  }
+
+  .cart-display {
+    @include flex-column();
+  }
+
+  .checkout-product-card {
+    margin-top: 20px;
+    @include flex-column(flex-start);
+    height: 350px;
+    width: 90vw;
+    //   overflow: hidden;
+    img {
+      height: 150px;
+    }
+    section {
+      @include flex-row(space-between, center);
+      padding-left: 30px;
+      padding-right: 30px;
+      width: 90vw;
+      height: 60px;
+    }
+    h5 {
+      height: 30px;
+      @include flex-row();
+      font-size: 18px;
+    }
+    h6 {
+      @include flex-row();
+
+      height: 30px;
+      margin-left: 20px;
+      font-size: 20px;
+    }
+    p {
+      @include flex-row();
+      margin-top: 15px;
+      font-size: 18px;
+      height: 30px;
+      margin-right: 90px;
+    }
+    button {
+      margin-top: 15px;
+    }
+  }
+  .checkout-final {
+    margin-top: 20px;
+    @include flex-column(flex-start);
+    height: 150px;
+
+    section {
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+  .cart-total-price {
+    font-weight: bold;
+  }
+  .checkout-button {
+    width: 300px;
+  }
+}

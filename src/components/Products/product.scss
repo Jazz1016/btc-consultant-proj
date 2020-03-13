@@ -33,6 +33,7 @@
   width: 85vw;
 }
 .prod-img {
+  border-radius: 25px;
   height: 500px;
   width: 320px;
 }
@@ -67,6 +68,9 @@
   border-style: solid;
   border-color: $secondary;
   border-width: 0.5px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   width: 85vw;
   min-height: 200px;
   max-height: 500px;

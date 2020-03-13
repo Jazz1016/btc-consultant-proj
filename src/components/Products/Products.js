@@ -26,24 +26,28 @@ const Products = props => {
   return (
     <div>
       <Card style={{ width: "20rem" }} className="product-card">
-        <Card.Img variant="top" src={`${product_img}`} />
-        <Card.Body>
-          <Card.Title style={{ "font-size": "20px" }}>
-            {product_name}
-          </Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{price}</Card.Subtitle>
+        <Card.Img
+          style={{ width: "317.5px", height: "370px" }}
+          variant="top"
+          src={`${product_img}`}
+        />
+        <Card.Body className="boot-card-body">
+          <Card.Title className="boot-card-name">{product_name}</Card.Title>
           <Card.Text>{truncateString(description, 30)}</Card.Text>
-          <Link to={`/product/${product_id}`}>Details</Link>
-          <Button
-            className="products-button"
-            onClick={() => {
-              axios.post(`/api/carts`, { user_id, product_id }).then(res => {
-                props.addToCart(res.data);
-              });
-            }}
-          >
-            Add to cart
-          </Button>
+          <Card.Subtitle className="mb-2 text-muted">${price}</Card.Subtitle>
+          <div>
+            <Link to={`/product/${product_id}`}>Details</Link>
+            <Button
+              className="products-button"
+              onClick={() => {
+                axios.post(`/api/carts`, { user_id, product_id }).then(res => {
+                  props.addToCart(res.data);
+                });
+              }}
+            >
+              Add to cart
+            </Button>
+          </div>
         </Card.Body>
       </Card>
       {/* <Link to={`/product/${product_id}`}>

@@ -3,7 +3,7 @@ import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { v4 as randomString } from "uuid";
-import "./Blog.css";
+import "./Blog.scss";
 
 const BlogEdit = props => {
   const [blogObj, setBlogObj] = useState({

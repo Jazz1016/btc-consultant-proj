@@ -4,6 +4,7 @@ import { login, register } from "../../redux/reducers/userReducer";
 import "./auth.scss";
 import Input from "@material-ui/core/Input";
 import { Button } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 
 const Auth = props => {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ const Auth = props => {
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [logReg, setLogReg] = useState(false);
+  console.log(props);
   useEffect(() => {}, []);
   return (
     <div className="auth-big-daddy">
@@ -49,6 +51,7 @@ const Auth = props => {
           <Button
             onClick={() => {
               props.register(email, pass, first, last);
+              props.history.push("/");
             }}
             color="red"
           >
@@ -73,7 +76,6 @@ const Auth = props => {
           <h5>Email</h5>
           <Input
             onChange={e => {
-              console.log("hit");
               setEmail(e.target.value);
             }}
             value={email}
@@ -91,6 +93,7 @@ const Auth = props => {
           <Button
             onClick={() => {
               props.login(email, pass);
+              props.history.push("/");
             }}
           >
             Login
@@ -113,5 +116,8 @@ const Auth = props => {
     </div>
   );
 };
+const mapStateToProps = state => {
+  return state.userReducer;
+};
 
-export default connect(null, { login, register })(Auth);
+export default connect(mapStateToProps, { login, register })(withRouter(Auth));

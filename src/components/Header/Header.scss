@@ -38,20 +38,20 @@
   border-bottom-right-radius: 7px;
   font-size: 20px;
   background-color: $background;
+  transition: 0.5s ease-in;
   a {
     @include flex-row(center, center);
     text-decoration: none;
     color: $textcolor2;
     width: 100vw;
-    height: 8vh;
+    // height: 8vh;
     border: solid;
-    border-bottom: none;
+    border-top: solid;
     border-color: $info;
     border-width: thin;
   }
   a:hover {
-    background-color: $light;
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -144,9 +144,6 @@
       border-radius: 20px;
     }
     a:hover {
-      border-style: solid;
-      border-color: $info;
-      background-color: white;
     }
   }
 }

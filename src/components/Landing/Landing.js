@@ -33,7 +33,6 @@ const Landing = props => {
           <img src={meteor} alt="meteor logo" />
           <h4>Create a Fortune</h4>
           <p>Learn how to invest, save, and control your money</p>
-
           <Link to="/shop">View Programs ></Link>
         </section>
         <div className="landing-design">
@@ -50,7 +49,6 @@ const Landing = props => {
             <div className="top-blue"></div>
           </div>
         </div>
-        <h6>Reviews</h6>
         <Reviews />
         <ImageFlip />
         {/* <div className="flex-products-landing">{productDisplay}</div> */}

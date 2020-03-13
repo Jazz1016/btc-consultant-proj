@@ -28,7 +28,7 @@ const Product = props => {
             Initial Price: <span className="crossed-out">${markedUp}</span>
           </p>
           <p>
-            Temporary Low Price: <span>${product.price}</span>
+            Get it now for just: <span>${product.price}</span>
           </p>
           <Button variant="success">Add to Cart</Button>
         </section>

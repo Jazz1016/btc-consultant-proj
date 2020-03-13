@@ -199,7 +199,7 @@
 
 @media (min-width: 980px) {
   .landing-text-box {
-    top: 17vh;
+    top: 10vh;
     left: 25vw;
     height: 100px;
     width: 200px;
@@ -207,8 +207,8 @@
       position: relative;
       right: 90px;
       top: 50px;
-      height: 35px;
-      width: 35px;
+      height: 40px;
+      width: 40px;
       border-radius: 20px;
       background-color: $secondary;
     }
@@ -217,14 +217,14 @@
       font-size: 28px;
     }
     p {
-      font-size: 16px;
+      font-size: 20px;
     }
     a {
       @include flex-row();
       margin-left: 35px;
       font-size: 14px;
-      height: 40px;
-      width: 120px;
+      height: 50px;
+      width: 130px;
     }
   }
 

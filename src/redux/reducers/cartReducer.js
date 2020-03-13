@@ -1,5 +1,17 @@
 const initialState = {
-  cart: []
+  cart: [
+    {
+      user_id: 3,
+      product_id: 13,
+      cart_id: 95,
+      product_name: "Bitcoin Security Course",
+      product_img:
+        "https://james-personal-proj.s3.amazonaws.com/e970a159-da7b-459b-a51e-c46bdf031810-Coinbase-Patent-Proposes-an-Upgraded-Security-for-Bitcoin-Payments-740x492.jpg",
+      price: 50,
+      description: "Learn how to hold your coins completely safe offline",
+      available: true
+    }
+  ]
 };
 
 const GET_CART = "GET_CART";

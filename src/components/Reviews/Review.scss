@@ -8,11 +8,12 @@
 .review-box {
   @include flex-column();
   width: 90vw;
-  height: 250px;
+  height: 280px;
   border-radius: 25px;
   margin-top: 4vh;
-  box-shadow: -0.25px -0.5px 1px 0.5px $primary;
+  box-shadow: -0.25px -0.5px 1px 0.5px $background;
   color: $textcolor2;
+  padding: 10px 10px 10px 10px;
 }
 
 .light-box {
@@ -28,9 +29,6 @@
 }
 
 @media (min-width: 680px) {
-  s .review-center {
-  }
-
   .review-box {
     width: 55vw;
     height: 225px;
