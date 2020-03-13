@@ -9,22 +9,27 @@ import { Button } from "react-bootstrap";
 const Cart = props => {
   const { cart } = props.cartReducer;
   const { user_id } = props.userReducer.user;
-  // console.log(props);
+  console.log(props);
   useEffect(() => {
-    // axios.get(`/api/products`).then(res => {
-    //   setProductsArr(res.data);
-    // });
-  }, [cart]);
+    axios.get(`/api/products`).then(res => {
+      props.getCart(res.data);
+    });
+  }, []);
+  const handleToken = token => {
+    axios.post("/api/payment", { token, priceTotal });
+  };
   let cartDisplay = cart.map(el => {
     return (
       <div className="checkout-product-card">
         <img src={el.product_img} alt={`${el.product_name}`} />
         <section>
-          <h5>Program: </h5>
+          <h5>Product: </h5>
+          <div className="desktop-divider"></div>
           <h6>{el.product_name}</h6>
         </section>
         <section>
           <p>Price: </p>
+          <div className="desktop-divider"></div>
           <p>${el.price}</p>
         </section>
 
@@ -44,9 +49,6 @@ const Cart = props => {
   });
   console.log(props);
   console.log(cart);
-  const handleToken = (token, addresses) => {
-    console.log(token, addresses);
-  };
   const priceTotal = cart.reduce((acc, el) => {
     return acc + el.price;
   }, 0);

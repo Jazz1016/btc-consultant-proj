@@ -5,6 +5,7 @@ const session = require("express-session");
 const cors = require("cors");
 const stripe = require("stripe")("STRIPE_SECRET_KEY");
 const uuid = require("uuid/v4");
+const paymentCtrl = require("./controllers/stripeController");
 
 const authCTRL = require("./controllers/authController");
 const blogCtrl = require("./controllers/blogController");
@@ -60,58 +61,6 @@ app.get("/sign-s3", (req, res) => {
   });
 });
 // <--------------------S3 Code------------------------>
-
-app.get("/", (req, res) => {
-  res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
-});
-
-app.post("/checkout", async (req, res) => {
-  console.log("Request:", req.body);
-
-  let error;
-  let status;
-  try {
-    const { product, token } = req.body;
-
-    const customer = await stripe.customers.create({
-      email: token.email,
-      source: token.id
-    });
-
-    const idempotency_key = uuid();
-    const charge = await stripe.charges.create(
-      {
-        amount: product.price * 100,
-        currency: "usd",
-        customer: customer.id,
-        receipt_email: token.email,
-        description: `Purchased the ${product.name}`,
-        shipping: {
-          name: token.card.name,
-          address: {
-            line1: token.card.address_line1,
-            line2: token.card.address_line2,
-            city: token.card.address_city,
-            country: token.card.address_country,
-            postal_code: token.card.address_zip
-          }
-        }
-      },
-      {
-        idempotency_key
-      }
-    );
-    console.log("Charge:", { charge });
-    status = "success";
-  } catch (error) {
-    console.error("Error:", error);
-    status = "failure";
-  }
-
-  res.json({ error, status });
-});
-
-//+++++++++++++++++++++++++++++++++++Stripe code++++++++++++++++++++++++++++++++++
 
 app.use(
   session({
@@ -183,4 +132,7 @@ app.post("/api/mail", mailerCtrl.sendEmail);
 
 //CMC request endpoints
 // app.get("/api/cmc", coinCTRL.getCoinData);
-app.get("/api/coindesk", coinCTRL.getBTCPrices);
+// app.get("/api/coindesk", coinCTRL.getBTCPrices);
+
+//Stripe controller
+app.post("/api/payment", paymentCtrl.payment);
