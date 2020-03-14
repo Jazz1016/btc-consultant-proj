@@ -36,7 +36,7 @@ const ImageFlip = props => {
         <p>{textArr[imgIndex]}</p>
       </section>
       <section className="main-btn">
-        <Link to="/shop">View Programs ></Link>
+        <Link to="/newsletter">View Newsletter ></Link>
       </section>
     </div>
   );

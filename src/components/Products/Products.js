@@ -33,8 +33,10 @@ const Products = props => {
         />
         <Card.Body className="boot-card-body">
           <Card.Title className="boot-card-name">{product_name}</Card.Title>
-          <Card.Text>{truncateString(description, 30)}</Card.Text>
-          <Card.Subtitle className="mb-2 text-muted">${price}</Card.Subtitle>
+          <Card.Text className="text-muted">
+            {truncateString(description, 30)}
+          </Card.Text>
+          <Card.Subtitle className="mb-2 text-bold">${price}</Card.Subtitle>
           <div>
             <Link to={`/product/${product_id}`}>Details</Link>
             <Button

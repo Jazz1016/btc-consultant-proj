@@ -11,22 +11,20 @@
 }
 .main-btn {
   @include flex-row();
-  border: 2px solid #3dddc2;
-  color: #3dddc2;
-
+  border: 2px solid $info;
   border-radius: 3px;
   height: 50px;
   width: 160px;
   margin-top: 10vh;
   a {
     text-decoration: none;
-    color: #3dddc2;
+    color: $info;
     font-weight: bold;
   }
 }
 
 .main-btn:hover {
-  background-color: #3dddc2;
+  background-color: $info;
   a {
     color: white;
   }

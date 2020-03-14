@@ -13,7 +13,6 @@
   width: 100px;
   z-index: 6;
   color: $textcolor2;
-
   img {
     position: relative;
     right: 75px;
@@ -32,7 +31,7 @@
   }
   a {
     @include flex-row();
-    font-size: 12px;
+    font-size: 10px;
     height: 30px;
     width: 100px;
     border-radius: 50px;
@@ -142,10 +141,10 @@
     }
     a {
       @include flex-row();
-      margin-left: 50px;
+      margin-left: 40px;
       font-size: 12px;
-      height: 30px;
-      width: 100px;
+      height: 40px;
+      width: 120px;
     }
   }
 

@@ -12,10 +12,13 @@ const Blog = props => {
     });
   }, [props.match.params.id]);
   return (
-    <div>
-      <h4>{blog.title}</h4>
-      <img src={blog.blog_img} alt="non redundant alt " />
-      <p>{blog.body}</p>
+    <div className="blog-route">
+      <div className="blog-holder">
+        <h4>{blog.title}</h4>
+        <img src={blog.blog_img} alt="blog picture" />
+        <div className="blog-divider"></div>
+        <p>{blog.body}</p>
+      </div>
     </div>
   );
 };
