@@ -86,8 +86,9 @@ const Charts = () => {
       });
   }, []);
 
-  const getBitcoinAllTime = () => {
-    const cryptoData = BTC.historical.map((date, i) => {
+  const getBitcoinAllTime = val => {
+    console.log(val);
+    const cryptoData = val.historical.map((date, i) => {
       return {
         x: new Date(date.date),
         y: [date.close, date.high, date.low, date.open]
@@ -108,32 +109,8 @@ const Charts = () => {
     });
   };
 
-  const getBitcoin = () => {
-    axios
-      .get(
-        "https://financialmodelingprep.com/api/v3/historical-price-full/crypto/BTCUSD"
-      )
-      .then(res => {
-        console.log("hit", res.data);
-        // setSymbol(res.data.symbol);
-        // setCrypto(res.data.historical);
-        const cryptoData = res.data.historical.map((date, i) => {
-          return {
-            x: new Date(date.date),
-            y: [date.close, date.high, date.low, date.open]
-          };
-        });
-        setOptions([
-          {
-            type: "candlestick",
-            showInLegend: true,
-            name: `${res.data.symbol}`,
-            yValueFormatString: "$###0.00",
-            xValueFormatString: "MMMM YY",
-            dataPoints: cryptoData
-          }
-        ]);
-      });
+  const get1Month = val => {
+    // const cryptoData
   };
 
   console.log(BTC, LTC, ETH, DASH, EOS, XRP, XMR);
@@ -141,30 +118,49 @@ const Charts = () => {
     <div>
       {}
       <CanvasJSChart options={options} />
-      <Button
-        onClick={() => {
-          getBitcoinAllTime();
+      <Button>BTC</Button>
+      <select
+        onChange={e => {
+          console.log("hit", e.target.value);
+          switch (e.target.value) {
+            case "BTC":
+              getBitcoinAllTime(e.target.value);
+              break;
+            case "LTC":
+            // getLitecoinAllTime();
+            default:
+              getBitcoinAllTime();
+          }
         }}
       >
-        BTC
-      </Button>
-      <Button
-        onClick={() => {
-          // getLitecoin();
-        }}
-      >
-        LTC
-      </Button>
-      <Button
-        onClick={() => {
-          // getEtherium();
-        }}
-      >
-        ETH
-      </Button>
-      <Button>Week</Button>
-      <Button>Month</Button>
-      <Button>Year</Button>
+        <option>Coin</option>
+        <option value={BTC}>Bitcoin</option>
+        <option value="LTC">Litecoin</option>
+        <option value="ETH">Etherium</option>
+        <option value="DASH">Dash</option>
+        <option value="EOS">EOS</option>
+        <option value="XMR">Monero</option>
+        <option value="XRP">Ripple</option>
+      </select>
+      <br />
+      <span>Time Period</span>
+      <select>
+        <option>15min</option>
+        <option>30min</option>
+        <option>1hour</option>
+        <option>daily</option>
+      </select>
+      <select>
+        <option>1 day</option>
+        <option>7 days</option>
+        <option>1 month</option>
+        <option>2 months</option>
+        <option>3 months</option>
+        <option>6 months</option>
+        <option>1 year</option>
+        <option>2 year</option>
+        <option>All Time</option>
+      </select>
     </div>
   );
 };

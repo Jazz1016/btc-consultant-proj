@@ -9,7 +9,7 @@ const sendEmail = (req, res) => {
   const email = emailInput;
   //   const signUpURL = `localhost:3000/#/sign_up/${id}`;
 
-  // Step 1
+  //
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -19,7 +19,7 @@ const sendEmail = (req, res) => {
   });
 
   let emailText = `Welcome to the newsletter!`;
-  // Step 2
+  //
   let mailOptions = {
     from: EMAIL,
     to: email,
@@ -27,7 +27,7 @@ const sendEmail = (req, res) => {
     text: emailText
   };
   console.log(mailOptions);
-  // Step 3
+  //
   transporter.sendMail(mailOptions, (err, data) => {
     if (err) {
       res.status(409).send("Error Occured");
