@@ -7,8 +7,6 @@ import "./Contact.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import ButtonToolbar from "react-bootstrap/ButtonToolbar"
-const notify = () => toast("Wow so easy !");
 const Contact = props => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,7 +41,7 @@ const Contact = props => {
         <h5>Message</h5>
         <TextareaAutosize
           rows="5"
-          cols="35"
+          cols="38"
           onChange={e => {
             setMessage(e.target.value);
           }}

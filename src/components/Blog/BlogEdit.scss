@@ -1,0 +1,33 @@
+@import "../../sass/vars";
+
+.blog-edit-center {
+  @include flex-column(center);
+  color: $textcolor2;
+  img {
+    margin-top: 50px;
+    height: 500px;
+  }
+  input {
+    outline-color: $secondary;
+  }
+  div {
+    @include flex-row(space-between);
+    h4 {
+      margin-right: 10px;
+    }
+    textarea {
+      color: $textcolor2;
+      padding: 10px 10px 0px 10px;
+      background-color: $light;
+      border-radius: 20px;
+      outline: none;
+      overflow: auto;
+      resize: none;
+    }
+    button {
+      margin-top: 20px;
+      margin-left: 180px;
+      margin-right: 125px;
+    }
+  }
+}

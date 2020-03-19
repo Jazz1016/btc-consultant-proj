@@ -18,8 +18,8 @@ available BOOLEAN NOT NULL
 
 CREATE TABLE users_products(
 cart_id SERIAL PRIMARY KEY,
-user_id INTEGER REFERENCES users(user_id),
-product_id INTEGER REFERENCES products(product_id)
+user_id INTEGER NOT NULL REFERENCES users(user_id),
+product_id INTEGER NOT NULL REFERENCES products(product_id)
 )
 
 CREATE TABLE contact_messages(

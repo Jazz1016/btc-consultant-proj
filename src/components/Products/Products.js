@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/reducers/cartReducer";
 import axios from "axios";
-// import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import "./products.scss";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Products = props => {
   const {
@@ -16,7 +17,7 @@ const Products = props => {
     product_img
   } = props.product;
   const { user_id } = props.user;
-  console.log(props);
+  console.log(user_id);
   const truncateString = (str, num) => {
     if (str.length <= num) {
       return str;
@@ -27,6 +28,9 @@ const Products = props => {
     <div>
       <Card style={{ width: "20rem" }} className="product-card">
         <Card.Img
+          onClick={() => {
+            props.history.push(`/product/${product_id}`);
+          }}
           style={{ width: "317.5px", height: "370px" }}
           variant="top"
           src={`${product_img}`}
@@ -42,9 +46,20 @@ const Products = props => {
             <Button
               className="products-button"
               onClick={() => {
-                axios.post(`/api/carts`, { user_id, product_id }).then(res => {
-                  props.addToCart(res.data);
-                });
+                console.log("hit");
+                axios
+                  .post(`/api/carts`, { user_id, product_id })
+                  .then(res => {
+                    props.addToCart(res.data);
+                    toast.success("added to cart", {
+                      position: toast.POSITION.BOTTOM_RIGHT
+                    });
+                  })
+                  .catch(() => {
+                    toast.error("Please Log in or register to add to cart", {
+                      position: toast.POSITION.BOTTOM_RIGHT
+                    });
+                  });
               }}
             >
               Add to cart
@@ -52,14 +67,7 @@ const Products = props => {
           </div>
         </Card.Body>
       </Card>
-      {/* <Link to={`/product/${product_id}`}>
-        <section>
-          <h4>{product_name}</h4>
-          <img src={product_img} />
-          <h6>{price}</h6>
-          <p>{description}</p>
-        </section>
-      </Link> */}
+      <ToastContainer autoClose={2000} />
     </div>
   );
 };
@@ -68,4 +76,4 @@ const mapStateToProps = reduxState => {
   return reduxState.userReducer;
 };
 
-export default connect(mapStateToProps, { addToCart })(Products);
+export default connect(mapStateToProps, { addToCart })(withRouter(Products));

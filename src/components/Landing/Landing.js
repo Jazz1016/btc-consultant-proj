@@ -7,7 +7,6 @@ import Products from "../Products/Products";
 import axios from "axios";
 import "./Landing.scss";
 import meteor from "../../assets/meteor.svg";
-import BlogsDisplay from "../Newsletter/BlogDisplay/BlogsDisplay";
 
 const Landing = props => {
   const [products, setProducts] = useState([]);
@@ -51,7 +50,7 @@ const Landing = props => {
         </div>
         <Reviews />
         <ImageFlip />
-        {/* <div className="flex-products-landing">{productDisplay}</div> */}
+        <div className="flex-products-landing">{productDisplay}</div>
         <Subscribe />
         <br />
       </section>

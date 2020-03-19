@@ -7,30 +7,12 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 const Charts = () => {
   const [crypto, setCrypto] = useState({ historical: [], symbol: "adffdasf" });
   const { symbol } = crypto;
-  useEffect(() => {}, []);
-  // console.log(crypto);
-  const cryptoData = crypto.historical.map((date, i) => {
-    return {
-      x: new Date(date.date),
-      y: [date.close, date.high, date.low, date.open]
-    };
-  });
-  // const monthly = () => {
-  cryptoData.splice(30);
-  // };
-  const yearly = () => {
-    cryptoData.splice(365);
-  };
-
-  const options = {
+  const [options, setOptions] = useState({
     theme: "dark1",
     animationEnabled: true,
     exportEnabled: true,
-    // title: {
-    //   text: "BTC price chart"
-    // },
     axisX: {
-      valueFormatString: "MMM"
+      valueFormatString: "MMMMDD"
     },
     axisY: {
       includeZero: false,
@@ -44,10 +26,19 @@ const Charts = () => {
         name: `${crypto.symbol}`,
         yValueFormatString: "$###0.00",
         xValueFormatString: "MMMM YY",
-        dataPoints: cryptoData
+        dataPoints: null
       }
     ]
-  };
+  });
+  useEffect(() => {}, []);
+  // console.log(crypto);
+  const cryptoData = crypto.historical.map((date, i) => {
+    return {
+      x: new Date(date.date),
+      y: [date.close, date.high, date.low, date.open]
+    };
+  });
+
   const getBitcoin = () => {
     axios
       .get(
@@ -65,6 +56,7 @@ const Charts = () => {
       )
       .then(res => {
         console.log("hit", res.data);
+        res.data.historical.splice(30);
         setCrypto(res.data);
       });
   };
@@ -105,27 +97,9 @@ const Charts = () => {
       >
         ETH
       </Button>
-      <Button
-      // onClick={() => {
-      //   weekly();
-      // }}
-      >
-        Week
-      </Button>
-      <Button
-      // onClick={() => {
-      //   monthly();
-      // }}
-      >
-        Month
-      </Button>
-      <Button
-      // onClick={() => {
-      //   yearly();
-      // }}
-      >
-        Year
-      </Button>
+      <Button>Week</Button>
+      <Button>Month</Button>
+      <Button>Year</Button>
     </div>
   );
 };

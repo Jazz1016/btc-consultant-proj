@@ -33,7 +33,7 @@
   width: 85vw;
 }
 .prod-img {
-  border-radius: 25px;
+  border-radius: 10px;
   height: 500px;
   width: 320px;
 }
@@ -53,10 +53,12 @@
   }
   p {
     width: 300px;
-    font-size: 20px;
+    font-size: 24px;
   }
 }
-
+.get-it-now-text {
+  font-size: 32px;
+}
 .crossed-out {
   text-decoration: line-through;
   text-decoration-thickness: 100%;
@@ -143,6 +145,9 @@
       font-size: 32px;
     }
   }
+  .get-it-now-text {
+    font-size: 36px;
+  }
 
   .crossed-out {
   }
@@ -219,6 +224,9 @@
       width: 300px;
       font-size: 20px;
     }
+  }
+  .get-it-now-text {
+    font-size: 24px;
   }
 
   .crossed-out {

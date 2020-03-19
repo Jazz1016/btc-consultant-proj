@@ -5,15 +5,19 @@ import { getCart } from "../../redux/reducers/cartReducer";
 import StripeCheckout from "react-stripe-checkout";
 import "./Cart.scss";
 import { Button } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cart = props => {
   const { cart } = props.cartReducer;
   const { user_id } = props.userReducer.user;
-  console.log(props);
+  // console.log(user_id);
   useEffect(() => {
-    axios.get(`/api/products`).then(res => {
-      props.getCart(res.data);
-    });
+    if (user_id) {
+      axios.get(`/api/carts/${props.userReducer.user.user_id}`).then(res => {
+        props.getCart(res.data);
+      });
+    }
   }, []);
   const handleToken = token => {
     axios.post("/api/payment", { token, priceTotal });
@@ -36,7 +40,12 @@ const Cart = props => {
         <Button
           variant="danger"
           onClick={() => {
-            axios.delete(`/api/carts/${el.cart_id}`);
+            console.log(el.cart_id);
+            axios.delete(`/api/carts/${el.cart_id}`).then(() => {
+              toast.info("Removed from cart", {
+                position: toast.POSITION.BOTTOM_RIGHT
+              });
+            });
             axios.get(`/api/carts/${user_id}`).then(res => {
               props.getCart(res.data);
             });
@@ -47,8 +56,8 @@ const Cart = props => {
       </div>
     );
   });
-  console.log(props);
-  console.log(cart);
+  // console.log(props);
+  // console.log(cart);
   const priceTotal = cart.reduce((acc, el) => {
     return acc + el.price;
   }, 0);
@@ -72,6 +81,7 @@ const Cart = props => {
           name="Your cart"
         />
       </div>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 };

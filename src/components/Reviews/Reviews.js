@@ -12,8 +12,13 @@ const Reviews = () => {
           instantly, though it left the drinker smoking at the ears for several
           hours afterward.
         </p>
-        <image alt="profile pic" />
-        <h6>Andre Texiera</h6>
+        <div>
+          <img
+            src="https://ca.slack-edge.com/T039C2PUY-URFR6EFPS-2d275a767305-512"
+            alt="profile pic"
+          />
+          <h6>Andre Texiera</h6>
+        </div>
       </section>
       <section className="review-box info-box">
         <p>
@@ -24,8 +29,13 @@ const Reviews = () => {
           learning about some obscure cryptocurrency, it was a spiritual
           awakening. :{`)`}
         </p>
-        <image alt="profile pic" />
-        <h6>Avery Johnson</h6>
+        <div>
+          <img
+            src="https://ca.slack-edge.com/T039C2PUY-URAH0ASLQ-8a6601fa4a0d-512"
+            alt="profile pic"
+          />
+          <h6>Avery Johnson</h6>
+        </div>
       </section>
       <section className="review-box success-box">
         <p>
@@ -35,8 +45,13 @@ const Reviews = () => {
           instantly, though it left the drinker smoking at the ears for several
           hours afterward.
         </p>
-        <image alt="profile pic" />
-        <h6>Andre Texiera</h6>
+        <div>
+          <img
+            src="https://ca.slack-edge.com/T039C2PUY-URFR6EFPS-2d275a767305-512"
+            alt="profile pic"
+          />
+          <h6>Andre Texiera</h6>
+        </div>
       </section>
     </div>
   );

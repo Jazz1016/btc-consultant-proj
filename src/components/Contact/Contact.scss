@@ -9,9 +9,31 @@
 .contact-box {
   margin-top: 5vh;
   min-height: 55vh;
-  width: 80vw;
+  width: 90vw;
   background-color: $light;
   border-radius: 20px;
+  input {
+    border-radius: 5px;
+    padding-top: 1px;
+    background-color: $light;
+    color: $textcolor2;
+  }
+  input:focus {
+    outline: none;
+    background-color: white;
+    color: $textcolor1;
+  }
+  textarea {
+    border-radius: 5px;
+    padding-top: 1px;
+    background-color: $light;
+    color: $textcolor2;
+  }
+  textarea:focus {
+    outline: none;
+    background-color: white;
+    color: $textcolor1;
+  }
   h5 {
     color: $textcolor2;
     margin-top: 10px;
@@ -57,7 +79,7 @@
   .contact-box {
     margin-top: 5vh;
     min-height: 60vh;
-    max-height: 80vh;
+    max-height: 200vh;
     width: 40vw;
     border-radius: 20px;
     h5 {

@@ -15,7 +15,7 @@ const Blog = props => {
     <div className="blog-route">
       <div className="blog-holder">
         <h4>{blog.title}</h4>
-        <img src={blog.blog_img} alt="blog picture" />
+        <img src={blog.blog_img} alt="Title" />
         <div className="blog-divider"></div>
         <p>{blog.body}</p>
       </div>

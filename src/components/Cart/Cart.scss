@@ -114,7 +114,7 @@
       width: 90vw;
       height: 225px;
       border-style: solid;
-      border-bottom: none;
+      border-bottom: solid;
       border-left: none;
       border-color: $light;
       border-width: 0.25px;
@@ -140,7 +140,7 @@
     button {
       position: relative;
       top: 10vh;
-      right: 7vw;
+      right: 100px;
       margin-top: 0px;
     }
   }

@@ -4,8 +4,8 @@ module.exports = {
     console.log("hit cart get user products");
     const db = req.app.get("db").cart;
     const { id } = req.params;
-    let products = await db.get_users_products(id);
-    // console.log(products);
+    let products = await db.get_users_products(+id);
+    console.log(products);
     if (products) {
       return res.status(200).send(products);
     } else {

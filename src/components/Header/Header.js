@@ -12,7 +12,7 @@ const Header = props => {
   const { isadmin, user_id } = props.userReducer.user;
   const { getCart } = props;
   const [dropdown, toggleDropdown] = useState(false);
-  const [bool, setBool] = useState(false);
+
   useEffect(() => {
     props.checkUser();
     if (user_id) {
@@ -27,6 +27,7 @@ const Header = props => {
         <section className="header">
           <img
             src={svgimg}
+            alt="click for dropdown"
             onClick={() => {
               toggleDropdown(!dropdown);
             }}
@@ -115,6 +116,7 @@ const Header = props => {
         <section className="header">
           <img
             src={svgimg}
+            alt="click for dropdown"
             onClick={() => {
               toggleDropdown(!dropdown);
             }}

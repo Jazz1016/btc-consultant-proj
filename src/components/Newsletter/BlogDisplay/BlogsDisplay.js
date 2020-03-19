@@ -17,7 +17,11 @@ const BlogDisplay = props => {
         props.history.push(`/blog/${props.blog.blog_id}`);
       }}
     >
-      <img src={props.blog.blog_img} className="blogs-display-img" />
+      <img
+        src={props.blog.blog_img}
+        alt="blog title"
+        className="blogs-display-img"
+      />
       <section className="blogs-display-text-section">
         <h4>{props.blog.title}</h4>
         <p>{truncateBody()}</p>

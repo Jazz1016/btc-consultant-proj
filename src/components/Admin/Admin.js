@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import ReactS3 from "react-s3";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -73,7 +71,7 @@ const Admin = props => {
   const productsDelete = prodArr.map(el => {
     return (
       <ListGroup.Item>
-        <div>{el.product_name}</div>
+        <div className="product-delete-display">{el.product_name}</div>
         <Button
           variant="danger"
           onClick={() => {

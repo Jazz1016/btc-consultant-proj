@@ -20,7 +20,6 @@
     height: 30px;
     width: 30px;
     border-radius: 15px;
-    background-color: $secondary;
   }
   h4 {
     font-weight: bold;
@@ -34,11 +33,11 @@
     font-size: 10px;
     height: 30px;
     width: 100px;
-    border-radius: 50px;
+    border-radius: 5px;
     border-style: solid;
     border-width: 1px;
     border-color: $info;
-    color: $textcolor2;
+    color: $info;
     text-decoration: none;
   }
   a:hover {

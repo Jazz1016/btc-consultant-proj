@@ -10,20 +10,12 @@ import axios from "axios";
 
 const MembersArea = props => {
   return (
-    <div>
-      <header></header>
-      <Breadcrumb>
-        <Breadcrumb.Item>
-          <Link to="/member/charts">Charts</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <Link>
-            <Link to="/member/chat">Discussion</Link>
-          </Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>Data</Breadcrumb.Item>
-      </Breadcrumb>
-      <br />
+    <div className="members-route">
+      <header className="members-header">
+        <Link to="/member/charts">Charts</Link>
+        <div></div>
+        <Link to="/member/chat">Discussion</Link>
+      </header>
       <Switch>
         <Route exact path="/member/charts" component={Charts} />
         <Route exact path="/member/chat" component={ChatWithMembers} />

@@ -3,7 +3,7 @@ import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { v4 as randomString } from "uuid";
-import "./Blog.scss";
+import "./BlogEdit.scss";
 
 const BlogEdit = props => {
   const [blogObj, setBlogObj] = useState({
@@ -11,7 +11,6 @@ const BlogEdit = props => {
     title: "",
     body: ""
   });
-  const [blog_img, setImg] = useState("");
   useEffect(() => {
     axios.get(`/api/blog/${props.match.params.id}`).then(res => {
       setBlogObj(res.data[0]);
@@ -61,63 +60,71 @@ const BlogEdit = props => {
   };
   // ==================================================
   const { title, body } = blogObj;
+
   return (
     <div>
       <section className="blog-edit-center">
-        <InputGroup size="sm" className="mb-3">
-          <img src={blogObj.blog_img} />
-          <br />
-          <input type="file" onChange={e => getSignedRequest(e.target.files)} />
-        </InputGroup>
+        <img src={blogObj.blog_img} alt="blog title photo" />
         <br />
-        <InputGroup className="mb-3">
-          <InputGroup.Prepend>
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Title
-            </InputGroup.Text>
-          </InputGroup.Prepend>
-          <FormControl
-            aria-label="Default"
-            aria-describedby="inputGroup-sizing-default"
+        <input type="file" onChange={e => getSignedRequest(e.target.files)} />
+        <br />
+        <div>
+          <h4 id="inputGroup-sizing-default">Title</h4>
+
+          <textarea
             value={title}
             onChange={e => {
               setInputs(e);
             }}
             name="title"
           />
-        </InputGroup>
+        </div>
+
         <br />
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Text id="inputGroup-sizing-lg">Body</InputGroup.Text>
-          </InputGroup.Prepend>
+        <div>
+          <h4>Body</h4>
+
           <textarea
-            cols="50"
+            cols="70"
             rows="10"
-            placeholder="hiiiii"
-            aria-label="Large"
-            aria-describedby="inputGroup-sizing-sm"
             value={body}
             onChange={e => {
               setInputs(e);
             }}
             name="body"
           />
-        </InputGroup>
-        <Button
-          onClick={() => {
-            axios.put(`/api/blog/${props.match.params.id}`, {
-              blog_img: blogObj.blog_img,
-              title,
-              body
-            });
-            axios.get(`/api/blog/${props.match.params.id}`).then(res => {
-              setBlogObj(res.data[0]);
-            });
-          }}
-        >
-          Confirm Edit
-        </Button>
+        </div>
+        <div>
+          <Button
+            onClick={() => {
+              axios.put(`/api/blog/${props.match.params.id}`, {
+                blog_img: blogObj.blog_img,
+                title,
+                body
+              });
+              axios.get(`/api/blog/${props.match.params.id}`).then(res => {
+                setBlogObj(res.data[0]);
+              });
+              props.history.push("/admin");
+            }}
+          >
+            Confirm Edit
+          </Button>
+          <Button
+            variant="danger"
+            onClick={() => {
+              let bool = window.confirm(
+                `Are you sure you want to delete this blog post?`
+              );
+              if (bool) {
+                axios.delete(`/api/blog/${props.match.params.id}`);
+                props.history.push("/admin");
+              }
+            }}
+          >
+            Delete Post
+          </Button>
+        </div>
       </section>
       <br />
     </div>

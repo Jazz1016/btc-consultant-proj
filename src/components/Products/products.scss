@@ -3,9 +3,11 @@
 .product-card {
   margin-top: 2vh;
   transition: 0.5s ease;
-  cursor: pointer;
   margin: 30px;
   color: $textcolor2;
+  img {
+    cursor: pointer;
+  }
 }
 .product-card:hover {
   transform: scale(1.003);

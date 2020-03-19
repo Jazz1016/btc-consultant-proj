@@ -5,7 +5,7 @@ import img2 from "./assets/image2.jpg";
 import img3 from "./assets/image3.jpg";
 import img4 from "./assets/image4.jpg";
 import img5 from "./assets/image5.jpg";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 const ImageFlip = props => {
   const text1 = "Have complete control over your money",
@@ -35,11 +35,16 @@ const ImageFlip = props => {
       <section className="img-flip-text-box">
         <p>{textArr[imgIndex]}</p>
       </section>
-      <section className="main-btn">
+      <section
+        className="main-btn"
+        onClick={() => {
+          props.history.push("/newsletter");
+        }}
+      >
         <Link to="/newsletter">View Newsletter ></Link>
       </section>
     </div>
   );
 };
 
-export default ImageFlip;
+export default withRouter(ImageFlip);

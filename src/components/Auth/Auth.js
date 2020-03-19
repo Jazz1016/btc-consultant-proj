@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { login, register } from "../../redux/reducers/userReducer";
 import "./auth.scss";
@@ -12,8 +12,7 @@ const Auth = props => {
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [logReg, setLogReg] = useState(false);
-  console.log(props);
-  useEffect(() => {}, []);
+  // console.log(props);
   return (
     <div className="auth-big-daddy">
       {logReg ? (

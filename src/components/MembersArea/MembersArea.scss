@@ -1,0 +1,25 @@
+@import "../../sass/vars";
+
+.members-route {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.members-header {
+  @include flex-row(flex-start);
+  background-color: $textcolor2;
+  width: 100%;
+  height: 5vh;
+  a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: $textcolor1;
+  }
+  div {
+    height: 50%;
+    width: 1px;
+    margin-left: 25px;
+    background-color: $textcolor1;
+    transform: rotate(25deg);
+  }
+}
