@@ -61,7 +61,24 @@ app.get("/sign-s3", (req, res) => {
   });
 });
 // <--------------------S3 Code------------------------>
+//<-----------------Socket code------------------------>
+const socketio = require("socket.io"),
+  http = require("http");
 
+const server = http.createServer(app);
+const io = socketio(server);
+const router = require("./sockets/router");
+
+io.on("connection", socket => {
+  console.log("a new user has connected!!!");
+
+  socket.on("disconnect", () => {
+    console.log("User has left!!!!");
+  });
+});
+
+app.use(router);
+//<-----------------Socket code------------------------>
 app.use(
   session({
     resave: false,

@@ -88,7 +88,7 @@ const Charts = () => {
 
   const getBitcoinAllTime = val => {
     console.log(val);
-    const cryptoData = val.historical.map((date, i) => {
+    const cryptoData = [val].historical.map((date, i) => {
       return {
         x: new Date(date.date),
         y: [date.close, date.high, date.low, date.open]
@@ -113,7 +113,7 @@ const Charts = () => {
     // const cryptoData
   };
 
-  console.log(BTC, LTC, ETH, DASH, EOS, XRP, XMR);
+  // console.log(BTC, LTC, ETH, DASH, EOS, XRP, XMR);
   return (
     <div>
       {}
@@ -122,19 +122,22 @@ const Charts = () => {
       <select
         onChange={e => {
           console.log("hit", e.target.value);
-          switch (e.target.value) {
+          switch (e.target.name) {
             case "BTC":
+              console.log(e.target.value);
               getBitcoinAllTime(e.target.value);
               break;
             case "LTC":
             // getLitecoinAllTime();
             default:
-              getBitcoinAllTime();
+            // getBitcoinAllTime();
           }
         }}
       >
         <option>Coin</option>
-        <option value={BTC}>Bitcoin</option>
+        <option name="BTC" value={BTC}>
+          Bitcoin
+        </option>
         <option value="LTC">Litecoin</option>
         <option value="ETH">Etherium</option>
         <option value="DASH">Dash</option>
