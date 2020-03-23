@@ -12,7 +12,7 @@ import Landing from "./components/Landing/Landing";
 import Newsletter from "./components/Newsletter/Newsletter";
 import Shop from "./components/Shop/Shop";
 import Product from "./components/Products/Product";
-import MembersArea from "./components/MembersArea/MembersArea";
+import MembersArea from "./components/MembersArea/MembersAreaHome/MembersAreaHome";
 
 export default (
   <Switch>

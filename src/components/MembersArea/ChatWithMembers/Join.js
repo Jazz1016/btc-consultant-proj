@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ChatWithMembers = props => {
+import "./Join.scss";
+
+export default function SignIn() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
 
@@ -18,24 +20,37 @@ const ChatWithMembers = props => {
           />
         </div>
         <div>
+          <select
+            onChange={event => {
+              console.log(event.target.value);
+              setRoom(event.target.value);
+            }}
+          >
+            <option>Select</option>
+            <option value="troll box">Troll Box</option>
+            <option value="bitcoin">Bitcoin</option>
+            <option>Alt Coins</option>
+            <option>Misc</option>
+          </select>
           <input
             placeholder="Room"
             className="joinInput mt-20"
             type="text"
-            onChange={event => setRoom(event.target.value)}
+            onChange={event => {
+              console.log(event.target.value);
+              setRoom(event.target.value);
+            }}
           />
         </div>
         <Link
           onClick={e => (!name || !room ? e.preventDefault() : null)}
-          to={`/members/chat?name=${name}&room=${room}`}
+          to={`/member/chat?name=${name}&room=${room}`}
         >
           <button className={"button mt-20"} type="submit">
-            Sign In
+            Join Chat Room
           </button>
         </Link>
       </div>
     </div>
   );
-};
-
-export default ChatWithMembers;
+}
