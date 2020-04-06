@@ -3,6 +3,7 @@
 .landing-holder {
   @include flex-column();
   overflow: hidden;
+  background-color: $background;
 }
 
 .landing-text-box {
@@ -14,6 +15,7 @@
   z-index: 6;
   color: $textcolor2;
   img {
+    background-color: $secondary;
     position: relative;
     right: 75px;
     top: 40px;
@@ -119,12 +121,11 @@
     width: 200px;
     img {
       position: relative;
-      right: 80px;
+      right: 100px;
       top: 45px;
       height: 30px;
       width: 30px;
       border-radius: 15px;
-      background-color: $secondary;
     }
     h4 {
       font-weight: bold;

@@ -1,0 +1,19 @@
+.subscribe-outer-div {
+  padding-top: 16px;
+  z-index: 6;
+  background-color: #181735;
+  width: 100%;
+  color: white;
+}
+
+.subscribe-outer-div h6 {
+  font-size: 20px;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #f5678a;
+          text-decoration-color: #f5678a;
+}
+
+.subscribe-outer-div p {
+  font-size: 12px;
+}
+/*# sourceMappingURL=Subscribe.css.map */

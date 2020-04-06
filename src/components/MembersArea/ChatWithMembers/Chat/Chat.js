@@ -17,23 +17,22 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "/api/chat";
+  // const ENDPOINT = "localhost:4133";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
+    socket = io.connect();
 
     setRoom(room);
     setName(name);
-    console.log(socket);
 
     socket.emit("join", { name, room }, error => {
       if (error) {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, []);
 
   useEffect(() => {
     socket.on("message", message => {
@@ -49,8 +48,9 @@ const Chat = ({ location }) => {
 
       socket.off();
     };
-  }, [messages]);
+  }, []);
 
+  console.log("hit", socket);
   const sendMessage = event => {
     event.preventDefault();
 

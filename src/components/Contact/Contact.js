@@ -14,7 +14,7 @@ const Contact = props => {
   const [message, setMessage] = useState("");
   return (
     <div className="flex-contact">
-      <header className="contact-header">Contact me</header>
+      <header className="contact-header">Contact Our Experts</header>
       <section className="contact-box">
         <h5>Name</h5>
         <input

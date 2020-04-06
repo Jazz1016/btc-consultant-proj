@@ -37,7 +37,9 @@
   width: 40vw;
   background-color: none;
   font-weight: bolder;
-  color: rgb(7, 6, 15);
+  p {
+    color: $textcolor1;
+  }
   opacity: 75%;
   border-radius: 20px;
 }

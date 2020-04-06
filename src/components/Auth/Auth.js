@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { login, register } from "../../redux/reducers/userReducer";
-import "./auth.scss";
+import "./Auth.scss";
 import Input from "@material-ui/core/Input";
 import { Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";

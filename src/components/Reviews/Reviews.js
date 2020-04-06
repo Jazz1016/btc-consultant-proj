@@ -39,18 +39,19 @@ const Reviews = () => {
       </section>
       <section className="review-box success-box">
         <p>
-          October arrived, spreading a damp chill over the grounds and into the
-          castle. Madam Pomfrey, the nurse, was kept busy by a sudden spate of
-          colds among the staff and students. Her Pepperup potion worked
-          instantly, though it left the drinker smoking at the ears for several
-          hours afterward.
+          My kid made sure he was some kind of enemy agent—might have been
+          dropped by parachute, for instance. But here’s the point, old boy.
+          What do you think put her on to him in the first place? She spotted he
+          was wearing a funny kind of shoes—said she’d never seen anyone wearing
+          shoes like that before. So the chances were he was a foreigner. Pretty
+          smart for a nipper of seven, eh?
         </p>
         <div>
           <img
-            src="https://ca.slack-edge.com/T039C2PUY-URFR6EFPS-2d275a767305-512"
+            src="https://ca.slack-edge.com/T039C2PUY-USH9ZNNMS-1b039d240e61-512"
             alt="profile pic"
           />
-          <h6>Andre Texiera</h6>
+          <h6>Joshua Smith</h6>
         </div>
       </section>
     </div>

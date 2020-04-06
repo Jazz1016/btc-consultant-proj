@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addToCart } from "../../redux/reducers/cartReducer";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
-import "./products.scss";
+import "./Products.scss";
 import { Link, withRouter } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

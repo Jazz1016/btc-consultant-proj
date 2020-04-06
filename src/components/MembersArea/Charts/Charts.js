@@ -86,31 +86,92 @@ const Charts = () => {
       });
   }, []);
 
-  const getBitcoinAllTime = val => {
-    console.log(val);
-    const cryptoData = [val].historical.map((date, i) => {
-      return {
-        x: new Date(date.date),
-        y: [date.close, date.high, date.low, date.open]
-      };
-    });
-    setOptions({
-      ...options,
-      data: [
-        {
-          type: "candlestick",
-          showInLegend: true,
-          name: `${BTC.symbol}`,
-          yValueFormatString: "$###0.00",
-          xValueFormatString: "MMMM YYYY",
-          dataPoints: cryptoData
-        }
-      ]
-    });
+  const getBitcoin = () => {
+    axios
+      .get(
+        "https://financialmodelingprep.com/api/v3/historical-price-full/crypto/BTCUSD"
+      )
+      .then(res => {
+        console.log("hit", res.data);
+        const cryptoData = res.data.historical.map((date, i) => {
+          return {
+            x: new Date(date.date),
+            y: [date.close, date.high, date.low, date.open]
+          };
+        });
+        cryptoData.splice(30);
+        setOptions({
+          ...options,
+          data: [
+            {
+              type: "candlestick",
+              showInLegend: true,
+              name: `${res.data.symbol}`,
+              yValueFormatString: "$###0.00",
+              xValueFormatString: "MM/YY",
+              dataPoints: cryptoData
+            }
+          ]
+        });
+      });
   };
-
-  const get1Month = val => {
-    // const cryptoData
+  const getLitecoin = () => {
+    axios
+      .get(
+        "https://financialmodelingprep.com/api/v3/historical-price-full/crypto/LTCUSD"
+      )
+      .then(res => {
+        console.log("hit", res.data);
+        const cryptoData = res.data.historical.map((date, i) => {
+          return {
+            x: new Date(date.date),
+            y: [date.close, date.high, date.low, date.open]
+          };
+        });
+        cryptoData.splice(30);
+        setOptions({
+          ...options,
+          data: [
+            {
+              type: "candlestick",
+              showInLegend: true,
+              name: `${res.data.symbol}`,
+              yValueFormatString: "$###0.00",
+              xValueFormatString: "MM/YY",
+              dataPoints: cryptoData
+            }
+          ]
+        });
+      });
+  };
+  const getEtherium = () => {
+    axios
+      .get(
+        "https://financialmodelingprep.com/api/v3/historical-price-full/crypto/ETHUSD"
+      )
+      .then(res => {
+        console.log("hit", res.data);
+        const cryptoData = res.data.historical.map((date, i) => {
+          return {
+            x: new Date(date.date),
+            y: [date.close, date.high, date.low, date.open]
+          };
+        });
+        cryptoData.splice(30);
+        setOptions({
+          ...options,
+          data: [
+            {
+              type: "candlestick",
+              showInLegend: true,
+              name: `${res.data.symbol}`,
+              yValueFormatString: "$###0.00",
+              xValueFormatString: "YYYY",
+              dataPoints: cryptoData
+            }
+          ]
+        });
+      });
   };
 
   // console.log(BTC, LTC, ETH, DASH, EOS, XRP, XMR);
@@ -118,8 +179,29 @@ const Charts = () => {
     <div>
       {}
       <CanvasJSChart options={options} />
-      <Button>BTC</Button>
-      <select
+      <Button
+        onClick={() => {
+          getBitcoin();
+        }}
+      >
+        BTC
+      </Button>
+      <Button
+        onClick={() => {
+          getLitecoin();
+        }}
+      >
+        LTC
+      </Button>
+      <Button
+        onClick={() => {
+          getEtherium();
+        }}
+      >
+        ETH
+      </Button>
+      {/* <Button>DASH</Button> */}
+      {/* <select
         onChange={e => {
           console.log("hit", e.target.value);
           switch (e.target.name) {
@@ -163,60 +245,9 @@ const Charts = () => {
         <option>1 year</option>
         <option>2 year</option>
         <option>All Time</option>
-      </select>
+      </select> */}
     </div>
   );
 };
 
 export default Charts;
-
-// const getLitecoin = () => {
-//   axios
-//     .get(
-//       "https://financialmodelingprep.com/api/v3/historical-price-full/crypto/LTCUSD"
-//     )
-//     .then(res => {
-//       console.log("hit", res.data);
-//       const cryptoData = res.data.historical.map((date, i) => {
-//         return {
-//           x: new Date(date.date),
-//           y: [date.close, date.high, date.low, date.open]
-//         };
-//       });
-//       setData([
-//         {
-//           type: "candlestick",
-//           showInLegend: true,
-//           name: `${res.data.symbol}`,
-//           yValueFormatString: "$###0.00",
-//           xValueFormatString: "MM/YY",
-//           dataPoints: cryptoData
-//         }
-//       ]);
-//     });
-// };
-// const getEtherium = () => {
-//   axios
-//     .get(
-//       "https://financialmodelingprep.com/api/v3/historical-price-full/crypto/ETHUSD"
-//     )
-//     .then(res => {
-//       console.log("hit", res.data);
-//       const cryptoData = res.data.historical.map((date, i) => {
-//         return {
-//           x: new Date(date.date),
-//           y: [date.close, date.high, date.low, date.open]
-//         };
-//       });
-//       setData([
-//         {
-//           type: "candlestick",
-//           showInLegend: true,
-//           name: `${res.data.symbol}`,
-//           yValueFormatString: "$###0.00",
-//           xValueFormatString: "YYYY",
-//           dataPoints: cryptoData
-//         }
-//       ]);
-//     });
-// };

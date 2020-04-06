@@ -3,7 +3,8 @@
 .auth-big-daddy {
   @include flex-column(flex-start);
   //   background-color: $primary;
-  height: 85vh;
+  min-height: 85vh;
+  max-height: 120vh;
   color: $textcolor2;
 }
 
@@ -13,11 +14,13 @@
   background-color: $light;
   margin-top: 5vh;
   min-height: 30vh;
-  max-height: 80vh;
+  max-height: 100vh;
   width: 75vw;
   box-shadow: -0.5px 0.5px 0.5px 0.5px $primary;
   border-radius: 15px;
   margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   h5 {
     margin-top: 3vh;
   }
@@ -43,10 +46,11 @@
 @media (min-width: 960px) {
   .auth-box {
     @include flex-column(center, center);
+    overflow: hidden;
     font-size: 15px;
     margin-top: 5vh;
-    min-height: 30vh;
-    max-height: 80vh;
+    min-height: 400px;
+    max-height: 1000px;
     width: 40vw;
     border-radius: 15px;
   }

@@ -37,8 +37,6 @@
   }
   span:hover {
     background-color: $info;
-    border-style: solid;
-    border-width: 0.5px;
     border-color: $background;
   }
   img {
@@ -52,7 +50,6 @@
   }
 }
 .blogs-display-card:hover {
-  transform: scale(1.002);
   box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.6);
 }
 //TABLET STYLING ===============================================================
@@ -115,7 +112,7 @@
     }
     img {
       height: 200px;
-      width: 250px;
+      width: 275px;
     }
     section {
       width: 100%;

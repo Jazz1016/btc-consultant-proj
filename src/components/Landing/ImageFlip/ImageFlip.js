@@ -12,7 +12,7 @@ const ImageFlip = props => {
     text2 = "Get industry insights from a leading expert",
     text3 = "Live the good life!",
     text4 = "Claim your monetary sovereignty";
-  const imgArr = [img1, img2, img3, img4, img5];
+  const imgArr = [img1, img2, img3, img4];
   const textArr = [text1, text2, text3, text4];
   const [imgIndex, setImgIndex] = useState(0);
   useEffect(() => {
@@ -41,7 +41,7 @@ const ImageFlip = props => {
           props.history.push("/newsletter");
         }}
       >
-        <Link to="/newsletter">View Newsletter ></Link>
+        <Link to="/newsletter">View Newsletter</Link>
       </section>
     </div>
   );

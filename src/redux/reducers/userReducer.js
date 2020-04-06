@@ -15,7 +15,8 @@ const CLEAR_REDUCER = "CLEAR_REDUCER";
 
 export function clearReducer() {
   let action = {
-    type: CLEAR_REDUCER
+    type: CLEAR_REDUCER,
+    payload: {}
   };
 
   return action;
@@ -40,7 +41,6 @@ export function register(email, password, first_name, last_name) {
       last_name
     })
   };
-  console.log("hit");
 
   return action;
 }
@@ -70,7 +70,6 @@ export default function userReducer(state = initialState, action) {
     case CHECK_USER + "_FULFILLED":
       return { ...state, loading: false, user: action.payload.data };
     case CHECK_USER + "_REJECTED":
-      console.log("CHECK_USER REJECTED");
       return { ...state, loading: false };
     case LOGIN + "_PENDING":
       return { ...state, loading: true, error: false };
@@ -92,7 +91,6 @@ export default function userReducer(state = initialState, action) {
     case REGISTER + "_PENDING":
       return { ...state, loading: true, error: false };
     case REGISTER + "_FULFILLED":
-      console.log("hit");
       return { ...state, loading: false, user: action.payload.data };
     case REGISTER + "_REJECTED":
       return {
@@ -102,7 +100,7 @@ export default function userReducer(state = initialState, action) {
         errorMessage: action.payload.response.data
       };
     case CLEAR_REDUCER:
-      return { ...state, ...initialState };
+      return { ...state, user: action.payload };
     default:
       return state;
   }

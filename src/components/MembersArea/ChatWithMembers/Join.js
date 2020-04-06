@@ -20,7 +20,7 @@ export default function SignIn() {
           />
         </div>
         <div>
-          <select
+          {/* <select
             onChange={event => {
               console.log(event.target.value);
               setRoom(event.target.value);
@@ -31,7 +31,7 @@ export default function SignIn() {
             <option value="bitcoin">Bitcoin</option>
             <option>Alt Coins</option>
             <option>Misc</option>
-          </select>
+          </select> */}
           <input
             placeholder="Room"
             className="joinInput mt-20"

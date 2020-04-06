@@ -15,7 +15,6 @@ const Landing = props => {
       setProducts(res.data);
     });
   }, []);
-  // console.log(products);
   let productDisplay = products.map(product => {
     return (
       <Products
@@ -32,7 +31,7 @@ const Landing = props => {
           <img src={meteor} alt="meteor logo" />
           <h4>Create a Fortune</h4>
           <p>Learn how to invest, save, and control your money</p>
-          <Link to="/shop">View Programs ></Link>
+          <Link to="/shop">View Programs</Link>
         </section>
         <div className="landing-design">
           <div className="landing-design-bar">
@@ -50,7 +49,7 @@ const Landing = props => {
         </div>
         <Reviews />
         <ImageFlip />
-        <div className="flex-products-landing">{productDisplay}</div>
+        {/* <div className="flex-products-landing">{productDisplay}</div> */}
         <Subscribe />
         <br />
       </section>

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,oBAAoB,CAAC;EACnB,WAAW,EAAE,IAAI;EASjB,OAAO,EAAE,CAAC;EACV,gBAAgB,ECVL,OAAO;EDWlB,KAAK,EAAE,IAAI;EACX,KAAK,ECNM,KAAK;CDOjB;;AAdD,AAEE,oBAFkB,CAElB,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,SAAS;EAC1B,qBAAqB,ECFlB,OAAO;CDGX;;AANH,AAOE,oBAPkB,CAOlB,CAAC,CAAC;EACA,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "Subscribe.scss",
+        "../../sass/_vars.scss"
+    ],
+    "names": [],
+    "file": "Subscribe.css"
+}

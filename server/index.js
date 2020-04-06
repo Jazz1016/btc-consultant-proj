@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
-const cors = require("cors");
+// const cors = require("cors");
 const stripe = require("stripe")("STRIPE_SECRET_KEY");
 const uuid = require("uuid/v4");
 const paymentCtrl = require("./controllers/stripeController");
@@ -62,70 +62,70 @@ app.get("/sign-s3", (req, res) => {
 });
 // <--------------------S3 Code------------------------>
 //<-----------------Socket code------------------------>
-const socketio = require("socket.io"),
-  http = require("http");
-const server = http.createServer(app);
-// console.log(server);
+// const socketio = require("socket.io"),
+//   http = require("http");
+// const server = http.createServer(app);
+// // console.log(server);
 
-const io = socketio(server);
+// const io = socketio(server);
 const {
   addUser,
   removeUser,
   getUser,
   getUsersInRoom
 } = require("./sockets/users");
-const router = require("./sockets/router");
+// const router = require("./sockets/router");
 
-io.on("connect", socket => {
-  socket.on("join", ({ name, room }, callback) => {
-    console.log("join room hit");
-    const { error, user } = addUser({ id: socket.id, name, room });
+// io.on("connect", socket => {
+//   socket.on("join", ({ name, room }, callback) => {
+//     console.log(`${name} has joined ${room}`);
+//     const { error, user } = addUser({ id: socket.id, name, room });
 
-    if (error) return callback(error);
+//     if (error) return callback(error);
 
-    socket.join(user.room);
+//     socket.join(user.room);
 
-    socket.emit("message", {
-      user: "admin",
-      text: `${user.name}, welcome to room ${user.room}.`
-    });
-    socket.broadcast
-      .to(user.room)
-      .emit("message", { user: "admin", text: `${user.name} has joined!` });
+//     socket.emit("message", {
+//       user: "admin",
+//       text: `${user.name}, welcome to room ${user.room}.`
+//     });
+//     socket.broadcast
+//       .to(user.room)
+//       .emit("message", { user: "admin", text: `${user.name} has joined!` });
 
-    io.to(user.room).emit("roomData", {
-      room: user.room,
-      users: getUsersInRoom(user.room)
-    });
+//     io.to(user.room).emit("roomData", {
+//       room: user.room,
+//       users: getUsersInRoom(user.room)
+//     });
 
-    callback();
-  });
+//     callback();
+//   });
 
-  socket.on("sendMessage", (message, callback) => {
-    console.log("send message hit");
-    const user = getUser(socket.id);
+//   socket.on("sendMessage", (message, callback) => {
+//     console.log("send message hit");
+//     const user = getUser(socket.id);
 
-    io.to(user.room).emit("message", { user: user.name, text: message });
+//     io.to(user.room).emit("message", { user: user.name, text: message });
 
-    callback();
-  });
+//     callback();
+//   });
 
-  socket.on("disconnect", () => {
-    const user = removeUser(socket.id);
+//   socket.on("disconnect", () => {
+//     const user = removeUser(socket.id);
 
-    if (user) {
-      io.to(user.room).emit("message", {
-        user: "Admin",
-        text: `${user.name} has left.`
-      });
-      io.to(user.room).emit("roomData", {
-        room: user.room,
-        users: getUsersInRoom(user.room)
-      });
-    }
-  });
-});
-app.use(router);
+//     if (user) {
+//       io.to(user.room).emit("message", {
+//         user: "Admin",
+//         text: `${user.name} has left.`
+//       });
+//       io.to(user.room).emit("roomData", {
+//         room: user.room,
+//         users: getUsersInRoom(user.room)
+//       });
+//     }
+//   });
+// });
+// app.use(router);
 //<-----------------Socket code------------------------>
 app.use(
   session({
@@ -144,9 +144,60 @@ massive({
   }
 }).then(db => {
   app.set("db", db);
-  app.listen(SERVER_PORT || 4133, () =>
-    console.log(`Server running on ${SERVER_PORT}`)
+  const io = require("socket.io")(
+    app.listen(SERVER_PORT || 4133, () =>
+      console.log(`Server running on ${SERVER_PORT}`)
+    )
   );
+  io.on("connection", socket => {
+    socket.on("join", ({ name, room }, callback) => {
+      console.log(`${name} has joined ${room}`);
+      const { error, user } = addUser({ id: socket.id, name, room });
+
+      if (error) return callback(error);
+
+      socket.join(user.room);
+
+      socket.emit("message", {
+        user: "admin",
+        text: `${user.name}, welcome to room ${user.room}.`
+      });
+      socket.broadcast
+        .to(user.room)
+        .emit("message", { user: "admin", text: `${user.name} has joined!` });
+
+      io.to(user.room).emit("roomData", {
+        room: user.room,
+        users: getUsersInRoom(user.room)
+      });
+
+      callback();
+    });
+
+    socket.on("sendMessage", (message, callback) => {
+      console.log("send message hit");
+      const user = getUser(socket.id);
+
+      io.to(user.room).emit("message", { user: user.name, text: message });
+
+      callback();
+    });
+
+    socket.on("disconnect", () => {
+      const user = removeUser(socket.id);
+
+      if (user) {
+        io.to(user.room).emit("message", {
+          user: "Admin",
+          text: `${user.name} has left.`
+        });
+        io.to(user.room).emit("roomData", {
+          room: user.room,
+          users: getUsersInRoom(user.room)
+        });
+      }
+    });
+  });
   console.log("Database connected");
 });
 

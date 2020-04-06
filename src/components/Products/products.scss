@@ -4,14 +4,14 @@
   margin-top: 2vh;
   transition: 0.5s ease;
   margin: 30px;
-  color: $textcolor2;
+  color: $textcolor3;
   img {
     cursor: pointer;
   }
 }
 .product-card:hover {
-  transform: scale(1.003);
-  background-color: rgb(201, 198, 198);
+  // transform: scale(1.003);
+  background-color: rgb(223, 221, 221);
 }
 .products-button {
   margin-left: 1vw;
@@ -22,7 +22,6 @@
   margin-left: 0.5px;
   width: 317px;
   overflow: hidden;
-  background-color: $header;
 }
 .boot-card-name {
   height: 50px;

@@ -47,7 +47,7 @@
     // height: 8vh;
     border: solid;
     border-top: solid;
-    border-color: $info;
+    border-color: $light;
     border-width: thin;
   }
   a:hover {
@@ -124,7 +124,7 @@
     height: 0vh;
   }
   .desktop-nav {
-    margin-left: 150px;
+    margin-left: 125px;
     @include flex-row(flex-start, flex-start);
     background-color: none;
     position: relative;
@@ -145,5 +145,23 @@
     }
     a:hover {
     }
+  }
+}
+
+@media (min-width: 1150px) {
+  .desktop-nav {
+    margin-left: 400px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .desktop-nav {
+    margin-left: 700px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .desktop-nav {
+    margin-left: 1200px;
   }
 }

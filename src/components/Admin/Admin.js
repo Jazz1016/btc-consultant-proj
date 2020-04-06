@@ -30,19 +30,19 @@ const Admin = props => {
     setNewProd({ ...newProd, [e.target.name]: e.target.value });
   };
   useEffect(() => {
-    // if (props.user.isadmin) {
-    axios.get(`/api/contact`).then(res => {
-      setMessageArr(res.data);
-    });
-    axios.get(`/api/blog`).then(res => {
-      setBlogArr(res.data);
-    });
-    axios.get(`/api/products`).then(res => {
-      setProdArr(res.data);
-    });
-    // } else {
-    //   props.history.push("/");
-    // }
+    if (props.user.isadmin) {
+      axios.get(`/api/contact`).then(res => {
+        setMessageArr(res.data);
+      });
+      axios.get(`/api/blog`).then(res => {
+        setBlogArr(res.data);
+      });
+      axios.get(`/api/products`).then(res => {
+        setProdArr(res.data);
+      });
+    } else {
+      props.history.push("/");
+    }
   }, [props.history, props.user.isadmin]);
   let messageDisplay = messageArr.map(el => {
     return (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { Button } from "react-bootstrap";
-import "./product.scss";
+import "./Product.scss";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/reducers/cartReducer";
 import { ToastContainer, toast } from "react-toastify";
