@@ -14,7 +14,7 @@ const Reviews = () => {
         </p>
         <div>
           <img
-            src="https://ca.slack-edge.com/T039C2PUY-URFR6EFPS-2d275a767305-512"
+            src="https://static.photocdn.pt/images/articles/2019/08/07/images/articles/2019/07/31/best_linkedin_photos.jpg"
             alt="profile pic"
           />
           <h6>Andre Texiera</h6>
@@ -31,7 +31,7 @@ const Reviews = () => {
         </p>
         <div>
           <img
-            src="https://ca.slack-edge.com/T039C2PUY-URAH0ASLQ-8a6601fa4a0d-512"
+            src="https://i.pinimg.com/originals/f3/c6/8e/f3c68ef3a73b98a0414dd9cbd8fa696e.jpg"
             alt="profile pic"
           />
           <h6>Avery Johnson</h6>
@@ -48,7 +48,7 @@ const Reviews = () => {
         </p>
         <div>
           <img
-            src="https://ca.slack-edge.com/T039C2PUY-USH9ZNNMS-1b039d240e61-512"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmbsIg34RwQtK_SA8iuu-lKr4lCFDUPog_-crMArgkVlmCwv3m&usqp=CAU"
             alt="profile pic"
           />
           <h6>Joshua Smith</h6>
